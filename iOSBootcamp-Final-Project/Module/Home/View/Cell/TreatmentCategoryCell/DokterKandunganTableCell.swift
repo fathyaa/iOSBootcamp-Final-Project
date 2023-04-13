@@ -41,7 +41,7 @@ class DokterKandunganTableCell: UITableViewCell {
             drKandunganColView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
             drKandunganColView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             drKandunganColView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            drKandunganColView.heightAnchor.constraint(equalToConstant: 200)
+            drKandunganColView.heightAnchor.constraint(equalToConstant: 160)
         ])
     }
 }
