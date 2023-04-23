@@ -24,7 +24,7 @@ class TopMenuTableCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setColViewDelegate(){
+    func setColViewDelegate() {
         topMenuColView.delegate = self
         topMenuColView.dataSource = self
         topMenuColView.isScrollEnabled = false

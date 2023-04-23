@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol HomeViewControllerDelegate {
+    func directToDetailPage()
+}
+
 enum HomeSection: Int {
     case topMenu
     case promotionBanner
@@ -49,7 +53,7 @@ class HomeViewController: UIViewController {
         navigationItem.titleView = homeSearchBar
     }
     
-    func setTableView(){
+    func setTableView() {
         homeTableView.delegate = self
         homeTableView.dataSource = self
         homeTableView.register(TopMenuTableCell.self, forCellReuseIdentifier: TopMenuTableCell.identifier)
@@ -91,6 +95,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .drKandunganCategory:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterKandunganTableCell.identifier, for: indexPath) as? DokterKandunganTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
+            cell.homeVCDelegate = self
             cell.setColViewDelegate()
             return cell
         case .topTips:
@@ -199,5 +204,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .topMenu, .promotionBanner, .carouselBanner, .topThreeTips, .categoriesTips:
             return 0
         }
+    }
+}
+
+extension HomeViewController: HomeViewControllerDelegate {
+    func directToDetailPage() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "doctorListVC") as! DoctorListViewController
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
