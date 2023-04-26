@@ -43,6 +43,8 @@
 		36EEFB9829E6735A00C00AD1 /* RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EEFB9729E6735A00C00AD1 /* RoundCorners.swift */; };
 		D23C7A3F29F5708600225256 /* DoctorCardColViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C7A3D29F5708600225256 /* DoctorCardColViewCell.swift */; };
 		D23C7A4029F5708600225256 /* DoctorCardColViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23C7A3E29F5708600225256 /* DoctorCardColViewCell.xib */; };
+		D23C7A4529F9574200225256 /* HeaderDoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C7A4329F9574200225256 /* HeaderDoctorTableViewCell.swift */; };
+		D23C7A4629F9574200225256 /* HeaderDoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23C7A4429F9574200225256 /* HeaderDoctorTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		36EEFB9729E6735A00C00AD1 /* RoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCorners.swift; sourceTree = "<group>"; };
 		D23C7A3D29F5708600225256 /* DoctorCardColViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCardColViewCell.swift; sourceTree = "<group>"; };
 		D23C7A3E29F5708600225256 /* DoctorCardColViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorCardColViewCell.xib; sourceTree = "<group>"; };
+		D23C7A4329F9574200225256 /* HeaderDoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDoctorTableViewCell.swift; sourceTree = "<group>"; };
+		D23C7A4429F9574200225256 /* HeaderDoctorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderDoctorTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,7 +350,7 @@
 		36DD248B29E3F9DA000A64E2 /* DoctorDetail */ = {
 			isa = PBXGroup;
 			children = (
-				36DD248C29E3F9FB000A64E2 /* Controller */,
+				D23C7A4129F9566A00225256 /* View */,
 			);
 			path = DoctorDetail;
 			sourceTree = "<group>";
@@ -401,6 +405,24 @@
 			children = (
 				D23C7A3D29F5708600225256 /* DoctorCardColViewCell.swift */,
 				D23C7A3E29F5708600225256 /* DoctorCardColViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D23C7A4129F9566A00225256 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36DD248C29E3F9FB000A64E2 /* Controller */,
+				D23C7A4229F9567B00225256 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D23C7A4229F9567B00225256 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D23C7A4329F9574200225256 /* HeaderDoctorTableViewCell.swift */,
+				D23C7A4429F9574200225256 /* HeaderDoctorTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -472,6 +494,7 @@
 				36DD243F29DE69C2000A64E2 /* Main.storyboard in Resources */,
 				36DD247629E3F50D000A64E2 /* TopMenuColCell.xib in Resources */,
 				36EEFB8D29E64C8200C00AD1 /* CarouselColCell.xib in Resources */,
+				D23C7A4629F9574200225256 /* HeaderDoctorTableViewCell.xib in Resources */,
 				D23C7A4029F5708600225256 /* DoctorCardColViewCell.xib in Resources */,
 				36D9979F29E7B5C600C98ADC /* TopThreeTipsTableCell.xib in Resources */,
 			);
@@ -489,6 +512,7 @@
 				36DD246E29E3F455000A64E2 /* TopMenuTableCell.swift in Sources */,
 				36DD248A29E3F9B3000A64E2 /* DoctorListViewController.swift in Sources */,
 				36DD248429E3F806000A64E2 /* AccountViewController.swift in Sources */,
+				D23C7A4529F9574200225256 /* HeaderDoctorTableViewCell.swift in Sources */,
 				36D9979E29E7B5C600C98ADC /* TopThreeTipsTableCell.swift in Sources */,
 				36DD243A29DE69C2000A64E2 /* SceneDelegate.swift in Sources */,
 				36DD246B29E3F3A1000A64E2 /* TreatmentCategoryColCell.swift in Sources */,
