@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeViewControllerDelegate {
-    func directToDetailPage()
+    func directToListPage()
 }
 
 enum HomeSection: Int {
@@ -208,7 +208,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeViewControllerDelegate {
-    func directToDetailPage() {
+    func directToListPage() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "doctorListVC") as! DoctorListViewController
         navigationController?.pushViewController(viewController, animated: true)

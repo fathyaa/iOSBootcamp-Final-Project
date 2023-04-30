@@ -16,6 +16,7 @@ class DokterKandunganTableCell: UITableViewCell {
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.layer.masksToBounds = false
         return collectionView
     }()
@@ -66,6 +67,6 @@ extension DokterKandunganTableCell: UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.homeVCDelegate?.directToDetailPage()
+        self.homeVCDelegate?.directToListPage()
     }
 }

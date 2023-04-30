@@ -43,8 +43,16 @@
 		36EEFB9829E6735A00C00AD1 /* RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EEFB9729E6735A00C00AD1 /* RoundCorners.swift */; };
 		D23C7A3F29F5708600225256 /* DoctorCardColViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C7A3D29F5708600225256 /* DoctorCardColViewCell.swift */; };
 		D23C7A4029F5708600225256 /* DoctorCardColViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23C7A3E29F5708600225256 /* DoctorCardColViewCell.xib */; };
-		D23C7A4529F9574200225256 /* HeaderDoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C7A4329F9574200225256 /* HeaderDoctorTableViewCell.swift */; };
-		D23C7A4629F9574200225256 /* HeaderDoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23C7A4429F9574200225256 /* HeaderDoctorTableViewCell.xib */; };
+		D23C7A4529F9574200225256 /* HeaderDoctorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C7A4329F9574200225256 /* HeaderDoctorTableCell.swift */; };
+		D23C7A4629F9574200225256 /* HeaderDoctorTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23C7A4429F9574200225256 /* HeaderDoctorTableCell.xib */; };
+		D23C7A4929FE0D6B00225256 /* InfoDoctorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C7A4729FE0D6B00225256 /* InfoDoctorTableCell.swift */; };
+		D23C7A4A29FE0D6B00225256 /* InfoDoctorTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23C7A4829FE0D6B00225256 /* InfoDoctorTableCell.xib */; };
+		D23C7A4C29FE198900225256 /* SpecializationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C7A4B29FE198900225256 /* SpecializationTableCell.swift */; };
+		D23C7A4E29FE3AB600225256 /* ReviewTagTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C7A4D29FE3AB600225256 /* ReviewTagTableCell.swift */; };
+		D23C7A5529FE52F900225256 /* ReviewTagColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C7A5329FE52F900225256 /* ReviewTagColCell.swift */; };
+		D23C7A5629FE52F900225256 /* ReviewTagColCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23C7A5429FE52F900225256 /* ReviewTagColCell.xib */; };
+		D23C7A6429FEB42D00225256 /* StarTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C7A6229FEB42D00225256 /* StarTableCell.swift */; };
+		D23C7A6529FEB42D00225256 /* StarTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23C7A6329FEB42D00225256 /* StarTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,8 +94,16 @@
 		36EEFB9729E6735A00C00AD1 /* RoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCorners.swift; sourceTree = "<group>"; };
 		D23C7A3D29F5708600225256 /* DoctorCardColViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCardColViewCell.swift; sourceTree = "<group>"; };
 		D23C7A3E29F5708600225256 /* DoctorCardColViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorCardColViewCell.xib; sourceTree = "<group>"; };
-		D23C7A4329F9574200225256 /* HeaderDoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDoctorTableViewCell.swift; sourceTree = "<group>"; };
-		D23C7A4429F9574200225256 /* HeaderDoctorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderDoctorTableViewCell.xib; sourceTree = "<group>"; };
+		D23C7A4329F9574200225256 /* HeaderDoctorTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDoctorTableCell.swift; sourceTree = "<group>"; };
+		D23C7A4429F9574200225256 /* HeaderDoctorTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderDoctorTableCell.xib; sourceTree = "<group>"; };
+		D23C7A4729FE0D6B00225256 /* InfoDoctorTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDoctorTableCell.swift; sourceTree = "<group>"; };
+		D23C7A4829FE0D6B00225256 /* InfoDoctorTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDoctorTableCell.xib; sourceTree = "<group>"; };
+		D23C7A4B29FE198900225256 /* SpecializationTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecializationTableCell.swift; sourceTree = "<group>"; };
+		D23C7A4D29FE3AB600225256 /* ReviewTagTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTagTableCell.swift; sourceTree = "<group>"; };
+		D23C7A5329FE52F900225256 /* ReviewTagColCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTagColCell.swift; sourceTree = "<group>"; };
+		D23C7A5429FE52F900225256 /* ReviewTagColCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTagColCell.xib; sourceTree = "<group>"; };
+		D23C7A6229FEB42D00225256 /* StarTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTableCell.swift; sourceTree = "<group>"; };
+		D23C7A6329FEB42D00225256 /* StarTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,10 +437,74 @@
 		D23C7A4229F9567B00225256 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D23C7A4329F9574200225256 /* HeaderDoctorTableViewCell.swift */,
-				D23C7A4429F9574200225256 /* HeaderDoctorTableViewCell.xib */,
+				D23C7A4F29FE522100225256 /* HeaderCell */,
+				D23C7A5029FE523300225256 /* InfoCell */,
+				D23C7A5229FE526600225256 /* SpecializationCell */,
+				D23C7A5129FE524F00225256 /* ReviewCell */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D23C7A4F29FE522100225256 /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				D23C7A4329F9574200225256 /* HeaderDoctorTableCell.swift */,
+				D23C7A4429F9574200225256 /* HeaderDoctorTableCell.xib */,
+			);
+			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		D23C7A5029FE523300225256 /* InfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				D23C7A4729FE0D6B00225256 /* InfoDoctorTableCell.swift */,
+				D23C7A4829FE0D6B00225256 /* InfoDoctorTableCell.xib */,
+			);
+			path = InfoCell;
+			sourceTree = "<group>";
+		};
+		D23C7A5129FE524F00225256 /* ReviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D23C7A5D29FEB2DD00225256 /* CommentCell */,
+				D23C7A5B29FEB2B600225256 /* StarCell */,
+				D23C7A5C29FEB2C900225256 /* ReviewTagCell */,
+			);
+			path = ReviewCell;
+			sourceTree = "<group>";
+		};
+		D23C7A5229FE526600225256 /* SpecializationCell */ = {
+			isa = PBXGroup;
+			children = (
+				D23C7A4B29FE198900225256 /* SpecializationTableCell.swift */,
+			);
+			path = SpecializationCell;
+			sourceTree = "<group>";
+		};
+		D23C7A5B29FEB2B600225256 /* StarCell */ = {
+			isa = PBXGroup;
+			children = (
+				D23C7A6229FEB42D00225256 /* StarTableCell.swift */,
+				D23C7A6329FEB42D00225256 /* StarTableCell.xib */,
+			);
+			path = StarCell;
+			sourceTree = "<group>";
+		};
+		D23C7A5C29FEB2C900225256 /* ReviewTagCell */ = {
+			isa = PBXGroup;
+			children = (
+				D23C7A4D29FE3AB600225256 /* ReviewTagTableCell.swift */,
+				D23C7A5329FE52F900225256 /* ReviewTagColCell.swift */,
+				D23C7A5429FE52F900225256 /* ReviewTagColCell.xib */,
+			);
+			path = ReviewTagCell;
+			sourceTree = "<group>";
+		};
+		D23C7A5D29FEB2DD00225256 /* CommentCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommentCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,8 +565,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23C7A4A29FE0D6B00225256 /* InfoDoctorTableCell.xib in Resources */,
+				D23C7A5629FE52F900225256 /* ReviewTagColCell.xib in Resources */,
 				36D9979B29E79CB900C98ADC /* TopTipsTableCell.xib in Resources */,
 				36C6458429E5519A0028D074 /* BannerTableCell.xib in Resources */,
+				D23C7A6529FEB42D00225256 /* StarTableCell.xib in Resources */,
 				36DD244429DE69C4000A64E2 /* LaunchScreen.storyboard in Resources */,
 				36DD246C29E3F3A1000A64E2 /* TreatmentCategoryColCell.xib in Resources */,
 				36D997A529E7C43C00C98ADC /* TipsCategoriesColCell.xib in Resources */,
@@ -494,7 +577,7 @@
 				36DD243F29DE69C2000A64E2 /* Main.storyboard in Resources */,
 				36DD247629E3F50D000A64E2 /* TopMenuColCell.xib in Resources */,
 				36EEFB8D29E64C8200C00AD1 /* CarouselColCell.xib in Resources */,
-				D23C7A4629F9574200225256 /* HeaderDoctorTableViewCell.xib in Resources */,
+				D23C7A4629F9574200225256 /* HeaderDoctorTableCell.xib in Resources */,
 				D23C7A4029F5708600225256 /* DoctorCardColViewCell.xib in Resources */,
 				36D9979F29E7B5C600C98ADC /* TopThreeTipsTableCell.xib in Resources */,
 			);
@@ -512,7 +595,7 @@
 				36DD246E29E3F455000A64E2 /* TopMenuTableCell.swift in Sources */,
 				36DD248A29E3F9B3000A64E2 /* DoctorListViewController.swift in Sources */,
 				36DD248429E3F806000A64E2 /* AccountViewController.swift in Sources */,
-				D23C7A4529F9574200225256 /* HeaderDoctorTableViewCell.swift in Sources */,
+				D23C7A4529F9574200225256 /* HeaderDoctorTableCell.swift in Sources */,
 				36D9979E29E7B5C600C98ADC /* TopThreeTipsTableCell.swift in Sources */,
 				36DD243A29DE69C2000A64E2 /* SceneDelegate.swift in Sources */,
 				36DD246B29E3F3A1000A64E2 /* TreatmentCategoryColCell.swift in Sources */,
@@ -522,6 +605,9 @@
 				36D997A129E7C40900C98ADC /* TipsCategoriesTableCell.swift in Sources */,
 				36EEFB9529E66A9500C00AD1 /* DokterKandunganTableCell.swift in Sources */,
 				36DD245729E3AB31000A64E2 /* ProductModel.swift in Sources */,
+				D23C7A4E29FE3AB600225256 /* ReviewTagTableCell.swift in Sources */,
+				D23C7A6429FEB42D00225256 /* StarTableCell.swift in Sources */,
+				D23C7A4C29FE198900225256 /* SpecializationTableCell.swift in Sources */,
 				36EEFB8C29E64C8200C00AD1 /* CarouselColCell.swift in Sources */,
 				36DD248629E3F847000A64E2 /* HomeViewModel.swift in Sources */,
 				36DD248029E3F7C2000A64E2 /* AccountModel.swift in Sources */,
@@ -530,7 +616,9 @@
 				36DD248229E3F7E4000A64E2 /* AccountViewModel.swift in Sources */,
 				D23C7A3F29F5708600225256 /* DoctorCardColViewCell.swift in Sources */,
 				36EEFB9829E6735A00C00AD1 /* RoundCorners.swift in Sources */,
+				D23C7A4929FE0D6B00225256 /* InfoDoctorTableCell.swift in Sources */,
 				36DD245D29E3C0BA000A64E2 /* HomeViewController.swift in Sources */,
+				D23C7A5529FE52F900225256 /* ReviewTagColCell.swift in Sources */,
 				36C6458329E5519A0028D074 /* BannerTableCell.swift in Sources */,
 				36D9979A29E79CB900C98ADC /* TopTipsTableCell.swift in Sources */,
 			);

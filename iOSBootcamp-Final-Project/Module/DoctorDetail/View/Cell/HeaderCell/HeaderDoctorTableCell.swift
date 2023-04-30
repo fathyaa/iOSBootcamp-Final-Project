@@ -7,10 +7,14 @@
 
 import UIKit
 
-class HeaderDoctorTableViewCell: UITableViewCell {
+class HeaderDoctorTableCell: UITableViewCell {
 
     static let identifier = "HeaderDoctorTableViewCell"
-    @IBOutlet weak var doctorImage: UIImageView!
+    @IBOutlet weak var doctorImage: UIImageView!{
+        didSet{
+            doctorImage.layer.cornerRadius = 40
+        }
+    }
     @IBOutlet weak var doctorNameLabel: UILabel!
     @IBOutlet weak var doctorNumberLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
