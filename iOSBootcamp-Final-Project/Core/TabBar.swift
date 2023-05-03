@@ -18,9 +18,10 @@ class TabBar: UITabBarController {
     func setupViewControllers() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "homeVC")
+        let accountVC = storyboard.instantiateViewController(withIdentifier: "accountVC")
         viewControllers = [
             createNavController(for: homeVC, title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "house")!),
-            createNavController(for: UIViewController(), title: NSLocalizedString("Account", comment: ""), image: UIImage(systemName: "person")!)
+            createNavController(for: accountVC, title: NSLocalizedString("Account", comment: ""), image: UIImage(systemName: "person")!)
         ]
     }
     

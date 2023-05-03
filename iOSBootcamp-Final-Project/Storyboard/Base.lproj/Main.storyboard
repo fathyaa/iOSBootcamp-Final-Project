@@ -168,6 +168,33 @@
             </objects>
             <point key="canvasLocation" x="2453.6231884057975" y="60.9375"/>
         </scene>
+        <!--Account View Controller-->
+        <scene sceneID="qo5-mf-cVV">
+            <objects>
+                <viewController storyboardIdentifier="accountVC" id="977-P0-13E" customClass="AccountViewController" customModule="iOSBootcamp_Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IpJ-Rd-CpF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uwJ-sj-fGi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.91124754750000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2My-kj-Rew"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uwJ-sj-fGi" firstAttribute="top" secondItem="2My-kj-Rew" secondAttribute="top" id="7ZY-u8-gNZ"/>
+                            <constraint firstItem="uwJ-sj-fGi" firstAttribute="leading" secondItem="2My-kj-Rew" secondAttribute="leading" id="Xia-db-paM"/>
+                            <constraint firstItem="2My-kj-Rew" firstAttribute="bottom" secondItem="uwJ-sj-fGi" secondAttribute="bottom" id="XuJ-vI-Abf"/>
+                            <constraint firstItem="2My-kj-Rew" firstAttribute="trailing" secondItem="uwJ-sj-fGi" secondAttribute="trailing" id="ZM0-Nc-ZPU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykE-vH-aKH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3183" y="61"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="H62-Wy-RGY">
             <objects>
