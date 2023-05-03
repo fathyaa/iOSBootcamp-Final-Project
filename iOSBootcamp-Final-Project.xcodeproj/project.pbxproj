@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36B271E12A025BF900BCD70A /* DoctorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271E02A025BF900BCD70A /* DoctorsModel.swift */; };
+		36B271E42A025F8E00BCD70A /* DoctorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271E32A025F8E00BCD70A /* DoctorListViewModel.swift */; };
 		36C6458329E5519A0028D074 /* BannerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C6458129E5519A0028D074 /* BannerTableCell.swift */; };
 		36C6458429E5519A0028D074 /* BannerTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C6458229E5519A0028D074 /* BannerTableCell.xib */; };
 		36D9979A29E79CB900C98ADC /* TopTipsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9979829E79CB900C98ADC /* TopTipsTableCell.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36B271E02A025BF900BCD70A /* DoctorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsModel.swift; sourceTree = "<group>"; };
+		36B271E32A025F8E00BCD70A /* DoctorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListViewModel.swift; sourceTree = "<group>"; };
 		36C6458129E5519A0028D074 /* BannerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableCell.swift; sourceTree = "<group>"; };
 		36C6458229E5519A0028D074 /* BannerTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerTableCell.xib; sourceTree = "<group>"; };
 		36D9979829E79CB900C98ADC /* TopTipsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTipsTableCell.swift; sourceTree = "<group>"; };
@@ -117,6 +121,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36B271DF2A025A8900BCD70A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36B271E02A025BF900BCD70A /* DoctorsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		36B271E22A025F6700BCD70A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				36B271E32A025F8E00BCD70A /* DoctorListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		36D9979529E794AC00C98ADC /* TopTipsTableCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,12 +263,12 @@
 			isa = PBXGroup;
 			children = (
 				36DD246329E3F16D000A64E2 /* Controller */,
-				36DD245E29E3D471000A64E2 /* Cell */,
+				36DD245E29E3D471000A64E2 /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		36DD245E29E3D471000A64E2 /* Cell */ = {
+		36DD245E29E3D471000A64E2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				36DD246029E3EED1000A64E2 /* TopMenuCell */,
@@ -257,7 +277,7 @@
 				36DD245F29E3D517000A64E2 /* TreatmentCategoryCell */,
 				36EEFB9929E69E1400C00AD1 /* TipsCell */,
 			);
-			path = Cell;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		36DD245F29E3D517000A64E2 /* TreatmentCategoryCell */ = {
@@ -351,6 +371,8 @@
 			isa = PBXGroup;
 			children = (
 				D23C7A3B29F56FFC00225256 /* View */,
+				36B271DF2A025A8900BCD70A /* Model */,
+				36B271E22A025F6700BCD70A /* ViewModel */,
 			);
 			path = DoctorList;
 			sourceTree = "<group>";
@@ -411,30 +433,30 @@
 			isa = PBXGroup;
 			children = (
 				36DD248829E3F997000A64E2 /* Controller */,
-				D23C7A3C29F5700C00225256 /* Cell */,
+				D23C7A3C29F5700C00225256 /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		D23C7A3C29F5700C00225256 /* Cell */ = {
+		D23C7A3C29F5700C00225256 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				D23C7A3D29F5708600225256 /* DoctorCardColViewCell.swift */,
 				D23C7A3E29F5708600225256 /* DoctorCardColViewCell.xib */,
 			);
-			path = Cell;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		D23C7A4129F9566A00225256 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				36DD248C29E3F9FB000A64E2 /* Controller */,
-				D23C7A4229F9567B00225256 /* Cell */,
+				D23C7A4229F9567B00225256 /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		D23C7A4229F9567B00225256 /* Cell */ = {
+		D23C7A4229F9567B00225256 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				D23C7A4F29FE522100225256 /* HeaderCell */,
@@ -442,7 +464,7 @@
 				D23C7A5229FE526600225256 /* SpecializationCell */,
 				D23C7A5129FE524F00225256 /* ReviewCell */,
 			);
-			path = Cell;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		D23C7A4F29FE522100225256 /* HeaderCell */ = {
@@ -598,6 +620,7 @@
 				D23C7A4529F9574200225256 /* HeaderDoctorTableCell.swift in Sources */,
 				36D9979E29E7B5C600C98ADC /* TopThreeTipsTableCell.swift in Sources */,
 				36DD243A29DE69C2000A64E2 /* SceneDelegate.swift in Sources */,
+				36B271E42A025F8E00BCD70A /* DoctorListViewModel.swift in Sources */,
 				36DD246B29E3F3A1000A64E2 /* TreatmentCategoryColCell.swift in Sources */,
 				36DD245429DEAAE6000A64E2 /* ApiService.swift in Sources */,
 				36EEFB8F29E64D6500C00AD1 /* CarouselTableCell.swift in Sources */,
@@ -618,6 +641,7 @@
 				36EEFB9829E6735A00C00AD1 /* RoundCorners.swift in Sources */,
 				D23C7A4929FE0D6B00225256 /* InfoDoctorTableCell.swift in Sources */,
 				36DD245D29E3C0BA000A64E2 /* HomeViewController.swift in Sources */,
+				36B271E12A025BF900BCD70A /* DoctorsModel.swift in Sources */,
 				D23C7A5529FE52F900225256 /* ReviewTagColCell.swift in Sources */,
 				36C6458329E5519A0028D074 /* BannerTableCell.swift in Sources */,
 				36D9979A29E79CB900C98ADC /* TopTipsTableCell.swift in Sources */,

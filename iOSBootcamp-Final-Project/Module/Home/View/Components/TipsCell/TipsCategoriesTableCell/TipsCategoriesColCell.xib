@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TipsCategoriesColCell" customModule="iOSBootcamp_Final_Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="208"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="260" height="208"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6H-eU-eNo">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="208"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Parenting Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDa-rz-xnk">
+                                <rect key="frame" x="15" y="25" width="230" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MLK-Z1-V5c">
+                                <rect key="frame" x="15" y="53.5" width="107" height="109"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZE-f8-vXL">
+                                        <rect key="frame" x="0.0" y="0.0" width="107" height="31"/>
+                                        <color key="backgroundColor" red="0.9643402099609375" green="0.9643402099609375" blue="0.9643402099609375" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <imageReference key="image" image="chevron.right" catalog="system" symbolScale="small"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Button" imagePadding="32">
+                                            <imageReference key="image" image="chevron.right" catalog="system" symbolScale="small"/>
+                                            <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJu-uL-m02">
+                                        <rect key="frame" x="0.0" y="39" width="107" height="31"/>
+                                        <color key="backgroundColor" red="0.96434021000000003" green="0.96434021000000003" blue="0.96434021000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <imageReference key="image" image="chevron.right" catalog="system" symbolScale="small"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Button" imagePadding="32">
+                                            <imageReference key="image" image="chevron.right" catalog="system" symbolScale="small"/>
+                                            <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io5-xA-HKp">
+                                        <rect key="frame" x="0.0" y="78" width="107" height="31"/>
+                                        <color key="backgroundColor" red="0.96434021000000003" green="0.96434021000000003" blue="0.96434021000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <imageReference key="image" image="chevron.right" catalog="system" symbolScale="small"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Button" imagePadding="32">
+                                            <imageReference key="image" image="chevron.right" catalog="system" symbolScale="small"/>
+                                            <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sDa-rz-xnk" firstAttribute="leading" secondItem="E6H-eU-eNo" secondAttribute="leading" constant="15" id="42H-0L-HlM"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MLK-Z1-V5c" secondAttribute="bottom" constant="30" id="JKJ-4R-Gwt"/>
+                            <constraint firstItem="MLK-Z1-V5c" firstAttribute="leading" secondItem="E6H-eU-eNo" secondAttribute="leading" constant="15" id="LAA-0s-4eA"/>
+                            <constraint firstItem="sDa-rz-xnk" firstAttribute="top" secondItem="E6H-eU-eNo" secondAttribute="top" constant="25" id="Qb0-32-8dC"/>
+                            <constraint firstAttribute="trailing" secondItem="sDa-rz-xnk" secondAttribute="trailing" constant="15" id="fUA-Wb-zyN"/>
+                            <constraint firstItem="MLK-Z1-V5c" firstAttribute="top" secondItem="sDa-rz-xnk" secondAttribute="bottom" constant="15" id="jOQ-5W-asj"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MLK-Z1-V5c" secondAttribute="trailing" constant="15" id="rfD-Sr-mdB"/>
+                            <constraint firstAttribute="height" constant="208" id="s1o-Mv-7kV"/>
+                            <constraint firstAttribute="width" constant="260" id="yBc-ks-Hqx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="E6H-eU-eNo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6SS-cr-b1l"/>
+                <constraint firstAttribute="bottom" secondItem="E6H-eU-eNo" secondAttribute="bottom" id="ALA-zu-DZk"/>
+                <constraint firstItem="E6H-eU-eNo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="acj-lM-VL1"/>
+                <constraint firstAttribute="trailing" secondItem="E6H-eU-eNo" secondAttribute="trailing" id="ahm-I0-ymv"/>
+            </constraints>
+            <size key="customSize" width="260" height="208"/>
+            <connections>
+                <outlet property="bgView" destination="E6H-eU-eNo" id="Lei-9l-QH2"/>
+                <outlet property="buttonOne" destination="DZE-f8-vXL" id="fWf-Zg-DOg"/>
+                <outlet property="buttonThree" destination="io5-xA-HKp" id="RaQ-QJ-uZj"/>
+                <outlet property="buttonTwo" destination="mJu-uL-m02" id="QU6-Y8-gq4"/>
+                <outlet property="titleLabel" destination="sDa-rz-xnk" id="RpR-Yj-5Xu"/>
+            </connections>
+            <point key="canvasLocation" x="282.60869565217394" y="86.383928571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

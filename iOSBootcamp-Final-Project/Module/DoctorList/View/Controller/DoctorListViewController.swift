@@ -10,16 +10,34 @@ import UIKit
 class DoctorListViewController: UIViewController {
     
     @IBOutlet weak var doctorListColView: UICollectionView!
+    var doctorListViewModel: DoctorListViewModel?
+    var modelDoctors: [Doctors]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setColView()
+        bindAPIData()
     }
     
     func setColView() {
         doctorListColView.delegate = self
         doctorListColView.dataSource = self
         doctorListColView.register(UINib(nibName: "DoctorCardColViewCell", bundle: nil), forCellWithReuseIdentifier: DoctorCardColViewCell.identifier)
+    }
+    
+    func bindAPIData() {
+        self.doctorListViewModel = DoctorListViewModel(urlString: "http://localhost:3003/doctors", apiService: ApiService())
+        self.doctorListViewModel?.bindDoctorsData = { doctorsData in
+            if let modelData = doctorsData {
+                self.modelDoctors = modelData
+            } else {
+                self.doctorListColView.backgroundColor = .red
+            }
+            print("reload data")
+            DispatchQueue.main.async {
+                self.doctorListColView.reloadData()
+            }
+        }
     }
 }
 
@@ -31,11 +49,14 @@ extension DoctorListViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell =
                 doctorListColView.dequeueReusableCell(withReuseIdentifier: DoctorCardColViewCell.identifier, for: indexPath) as? DoctorCardColViewCell else { return UICollectionViewCell() }
+        if let data = modelDoctors {
+            cell.setData(doctors: data[indexPath.row])
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width / 2, height: 120)
+        return CGSize(width: collectionView.frame.width / 2, height: 120)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
