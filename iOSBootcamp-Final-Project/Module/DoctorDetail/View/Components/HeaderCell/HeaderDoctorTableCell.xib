@@ -35,13 +35,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="440/240/XI/dr/DPMPTSP/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOh-7u-To7">
-                                <rect key="frame" x="108" y="67" width="182" height="8.5"/>
+                                <rect key="frame" x="108" y="67" width="182" height="10.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="w9g-af-2wF">
-                                <rect key="frame" x="108" y="83.5" width="93.5" height="17"/>
+                                <rect key="frame" x="108" y="85.5" width="93.5" height="17"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bR0-eS-yFc">
                                         <rect key="frame" x="0.0" y="-0.5" width="22" height="17"/>
@@ -111,7 +111,7 @@
                             <constraint firstItem="YPX-Jc-IB4" firstAttribute="leading" secondItem="Yxb-tN-buV" secondAttribute="trailing" constant="10" id="WGa-A2-OSt"/>
                             <constraint firstAttribute="bottom" secondItem="zXf-yu-tSu" secondAttribute="bottom" constant="15" id="ZK0-vF-n45"/>
                             <constraint firstAttribute="trailing" secondItem="zXf-yu-tSu" secondAttribute="trailing" constant="85" id="bSQ-XE-nVi"/>
-                            <constraint firstItem="zXf-yu-tSu" firstAttribute="top" secondItem="w9g-af-2wF" secondAttribute="bottom" constant="23" id="e1i-1f-LDQ"/>
+                            <constraint firstItem="zXf-yu-tSu" firstAttribute="top" secondItem="w9g-af-2wF" secondAttribute="bottom" constant="21" id="e1i-1f-LDQ"/>
                             <constraint firstAttribute="trailing" secondItem="YPX-Jc-IB4" secondAttribute="trailing" constant="16" id="ndS-ox-b0s"/>
                             <constraint firstItem="YPX-Jc-IB4" firstAttribute="top" secondItem="30W-Wa-bGm" secondAttribute="top" constant="16" id="opu-om-EZQ"/>
                         </constraints>

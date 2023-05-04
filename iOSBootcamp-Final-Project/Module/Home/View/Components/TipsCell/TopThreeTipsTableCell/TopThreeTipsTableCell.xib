@@ -24,7 +24,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Nv-zK-GJS">
                                 <rect key="frame" x="15" y="0.0" width="319" height="91"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baju" translatesAutoresizingMaskIntoConstraints="NO" id="Yds-HE-Dat">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food-2" translatesAutoresizingMaskIntoConstraints="NO" id="Yds-HE-Dat">
                                         <rect key="frame" x="15" y="10" width="118" height="71"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="71" id="PYP-Cq-agc"/>
@@ -85,7 +85,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="baju" width="6000" height="4000"/>
+        <image name="food-2" width="6000" height="4000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

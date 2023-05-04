@@ -12,6 +12,7 @@ class DoctorListViewController: UIViewController {
     @IBOutlet weak var doctorListColView: UICollectionView!
     var doctorListViewModel: DoctorListViewModel?
     var modelDoctors: [Doctors]?
+    var indexSelected: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +50,8 @@ extension DoctorListViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell =
                 doctorListColView.dequeueReusableCell(withReuseIdentifier: DoctorCardColViewCell.identifier, for: indexPath) as? DoctorCardColViewCell else { return UICollectionViewCell() }
-        if let data = modelDoctors {
-            cell.setData(doctors: data[indexPath.row])
+        if let data = modelDoctors?[indexSelected ?? 0] {
+            cell.setData(doctors: data, index: indexPath.row)
         }
         return cell
     }
@@ -67,8 +68,8 @@ extension DoctorListViewController: UICollectionViewDataSource, UICollectionView
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "doctorDetailVC") as! DoctorDetailViewController
         
-        if let doctorDetail = modelDoctors?[indexPath.row] {
-            viewController.doctorDetail = doctorDetail
+        if let doctorDetail = modelDoctors?[indexSelected ?? 0] {
+            viewController.doctorDetail = doctorDetail.items[indexPath.row]
         }
         
         navigationController?.pushViewController(viewController, animated: true)

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeViewControllerDelegate {
-    func directToListPage()
+    func directToListPage(index: Int)
 }
 
 enum HomeSection: Int {
@@ -16,6 +16,8 @@ enum HomeSection: Int {
     case promotionBanner
     case carouselBanner
     case drKandunganCategory
+    case drPenyakitDalamCategory
+    case drSpesialisAnakCategory
     case topTips
     case topThreeTips
     case categoriesTips
@@ -31,10 +33,14 @@ enum HomeSection: Int {
         case 3:
             self = .drKandunganCategory
         case 4:
-            self = .topTips
+            self = .drPenyakitDalamCategory
         case 5:
-            self = .topThreeTips
+            self = .drSpesialisAnakCategory
         case 6:
+            self = .topTips
+        case 7:
+            self = .topThreeTips
+        case 8:
             self = .categoriesTips
         default:
             self = .promotionBanner
@@ -60,6 +66,8 @@ class HomeViewController: UIViewController {
         homeTableView.register(UINib(nibName: "BannerTableCell", bundle: nil), forCellReuseIdentifier: BannerTableCell.identifier)
         homeTableView.register(CarouselTableCell.self, forCellReuseIdentifier: CarouselTableCell.identifier)
         homeTableView.register(DokterKandunganTableCell.self, forCellReuseIdentifier: DokterKandunganTableCell.identifier)
+        homeTableView.register(DokterPenyakitDalamTableCell.self, forCellReuseIdentifier: DokterPenyakitDalamTableCell.identifier)
+        homeTableView.register(DokterAnakTableCell.self, forCellReuseIdentifier: DokterAnakTableCell.identifier)
         homeTableView.register(UINib(nibName: "TopTipsTableCell", bundle: nil), forCellReuseIdentifier: TopTipsTableCell.identifier)
         homeTableView.register(UINib(nibName: "TopThreeTipsTableCell", bundle: nil), forCellReuseIdentifier: TopThreeTipsTableCell.identifier)
         homeTableView.register(TipsCategoriesTableCell.self, forCellReuseIdentifier: TipsCategoriesTableCell.identifier)
@@ -71,7 +79,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 5 {
+        if section == 7 {
             return 3
         }
         return 1
@@ -81,7 +89,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch HomeSection(indexPath.section) {
         case .topMenu:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: TopMenuTableCell.identifier, for: indexPath) as? TopMenuTableCell else { return UITableViewCell() }
-            cell.setColViewDelegate()
+            cell.setTopMenuColView()
             return cell
         case .promotionBanner:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: BannerTableCell.identifier, for: indexPath) as? BannerTableCell else { return UITableViewCell() }
@@ -90,13 +98,25 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .carouselBanner:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: CarouselTableCell.identifier, for: indexPath) as? CarouselTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
-            cell.setColViewDelegate()
+            cell.setCarouselColView()
             return cell
         case .drKandunganCategory:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterKandunganTableCell.identifier, for: indexPath) as? DokterKandunganTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
             cell.homeVCDelegate = self
-            cell.setColViewDelegate()
+            cell.setDokterKandunganColView()
+            return cell
+        case .drPenyakitDalamCategory:
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterPenyakitDalamTableCell.identifier, for: indexPath) as? DokterPenyakitDalamTableCell else { return UITableViewCell() }
+            cell.backgroundColor = .clear
+            cell.homeVCDelegate = self
+            cell.setDokterPenyakitDalamColView()
+            return cell
+        case .drSpesialisAnakCategory:
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterAnakTableCell.identifier, for: indexPath) as? DokterAnakTableCell else { return UITableViewCell() }
+            cell.backgroundColor = .clear
+            cell.homeVCDelegate = self
+            cell.setDokterAnakColView()
             return cell
         case .topTips:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: TopTipsTableCell.identifier, for: indexPath) as? TopTipsTableCell else { return UITableViewCell() }
@@ -109,34 +129,45 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .categoriesTips:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: TipsCategoriesTableCell.identifier, for: indexPath) as? TipsCategoriesTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
-            cell.setColViewDelegate()
+            cell.setTipsCategoriesColView()
             return cell
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7
+        return 9
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch HomeSection(section) {
         case .topMenu, .promotionBanner, .carouselBanner, .topThreeTips, .categoriesTips:
             return nil
-        case .drKandunganCategory:
+        case .drKandunganCategory, .drPenyakitDalamCategory, .drSpesialisAnakCategory:
             let headerView = UITableViewHeaderFooterView()
             
             let sectionTitleLabel = UILabel()
-            sectionTitleLabel.text = "Konsultasi Dokter Spesialis Kandungan"
+            
             sectionTitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
             sectionTitleLabel.translatesAutoresizingMaskIntoConstraints = false
             
             let sectionSubTitleLabel = UILabel()
-            sectionSubTitleLabel.text = "Punya Keluhan berikut? Yuk, chat dokter kandungan mulai dari 25RB!"
+            
             sectionSubTitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
             sectionSubTitleLabel.translatesAutoresizingMaskIntoConstraints = false
             sectionSubTitleLabel.lineBreakMode = .byWordWrapping
             sectionSubTitleLabel.numberOfLines = 0
             
+            if section == 3 {
+                sectionTitleLabel.text = "Konsultasi Dokter Spesialis Kandungan"
+                sectionSubTitleLabel.text = "Punya Keluhan berikut? Yuk, chat dokter kandungan mulai dari 25RB!"
+            } else if section == 4 {
+                sectionTitleLabel.text = "Chat Dokter Spesialis Penyakit Dalam"
+                sectionSubTitleLabel.text = "Mulai dari 25RB! Atasi keluhan berikut:"
+            } else if section == 5 {
+                sectionTitleLabel.text = "Pilih Yang Baik Untuk Kesehatan Si Kecil"
+                sectionSubTitleLabel.text = "Chat dokter spesialis anak untuk atasi keluhan berikut:"
+            }
+                
             headerView.addSubview(sectionTitleLabel)
             headerView.addSubview(sectionSubTitleLabel)
             NSLayoutConstraint.activate([
@@ -150,6 +181,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 sectionSubTitleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -15)
             ])
             return headerView
+            
         case .topTips:
             let tipsHeaderView = UITableViewHeaderFooterView()
             
@@ -186,7 +218,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch HomeSection(section){
         case .topMenu, .promotionBanner, .carouselBanner, .topThreeTips, .categoriesTips:
             return 0
-        case .drKandunganCategory, .topTips:
+        case .drKandunganCategory, .topTips, .drPenyakitDalamCategory, .drSpesialisAnakCategory:
             return UITableView.automaticDimension
         }
     }
@@ -197,7 +229,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch HomeSection(section) {
-        case .drKandunganCategory:
+        case .drKandunganCategory, .drPenyakitDalamCategory, .drSpesialisAnakCategory:
             return 85
         case .topTips:
             return 60
@@ -208,9 +240,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeViewControllerDelegate {
-    func directToListPage() {
+    func directToListPage(index: Int) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "doctorListVC") as! DoctorListViewController
+//        viewController.modelDoctors = modelDoctors
+        viewController.indexSelected = index
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -8,6 +8,11 @@
 import Foundation
 
 struct Doctors: Codable {
+    let category: String
+    let items: [DoctorsByCategory]
+}
+
+struct DoctorsByCategory: Codable {
     let nama: String
     let noDokter: String
     let spesialis: String

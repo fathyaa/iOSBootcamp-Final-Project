@@ -26,7 +26,7 @@ class DokterKandunganTableCell: UITableViewCell {
         // Initialization code
     }
 
-    func setColViewDelegate() {
+    func setDokterKandunganColView() {
         drKandunganColView.delegate = self
         drKandunganColView.dataSource = self
         drKandunganColView.register(UINib(nibName: "TreatmentCategoryColCell", bundle: nil), forCellWithReuseIdentifier: TreatmentCategoryColCell.identifier)
@@ -67,6 +67,6 @@ extension DokterKandunganTableCell: UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.homeVCDelegate?.directToListPage()
+        self.homeVCDelegate?.directToListPage(index: 0)
     }
 }

@@ -25,7 +25,7 @@ class CarouselTableCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setColViewDelegate() {
+    func setCarouselColView() {
         carouselColView.dataSource = self
         carouselColView.delegate = self
         carouselColView.isPagingEnabled = true

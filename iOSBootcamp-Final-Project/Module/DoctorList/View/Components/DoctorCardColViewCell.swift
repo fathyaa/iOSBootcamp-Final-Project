@@ -28,11 +28,11 @@ class DoctorCardColViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setData(doctors: Doctors){
-        doctorNameLabel.text = "dr. " + (doctors.nama.components(separatedBy: " ").first ?? " ")
-        doctorDescLabel.text = doctors.spesialis + " - \(doctors.tahunPengalaman) tahun"
-        priceLabel.text = doctors.price
-        doctorImage.sd_setImage(with: URL(string: doctors.doctorImg))
+    func setData(doctors: Doctors?, index: Int){
+        doctorNameLabel.text = "dr. " + ((doctors?.items[index].nama ?? "").components(separatedBy: " ").first ?? "")
+        doctorDescLabel.text = (doctors?.items[index].spesialis ?? "") + " - \(doctors?.items[index].tahunPengalaman ?? 0) tahun"
+        priceLabel.text = doctors?.items[index].price
+        doctorImage.sd_setImage(with: URL(string: doctors?.items[index].doctorImg ?? ""))
     }
 
 }

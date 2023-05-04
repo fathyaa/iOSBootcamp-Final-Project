@@ -12,7 +12,7 @@ class TipsCategoriesColCell: UICollectionViewCell {
     static let identifier = "TipsCategoriesColCell"
     @IBOutlet weak var bgView: UIView!{
         didSet{
-            bgView.layer.contents = #imageLiteral(resourceName: "baju").cgImage
+            bgView.layer.contents = #imageLiteral(resourceName: "food").cgImage
             // #imageLiteral(resourceName: "webbg").cgImage
             bgView.layer.cornerRadius = 20
             bgView.clipsToBounds = true

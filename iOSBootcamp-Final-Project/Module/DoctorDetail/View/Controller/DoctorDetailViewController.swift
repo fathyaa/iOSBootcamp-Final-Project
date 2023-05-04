@@ -40,7 +40,7 @@ class DoctorDetailViewController: UIViewController {
     @IBOutlet weak var consultView: UIView!
     
     var doctorDetailTableView: UITableView!
-    var doctorDetail: Doctors?
+    var doctorDetail: DoctorsByCategory?
     
     override func viewDidLoad() {
         super.viewDidLoad()

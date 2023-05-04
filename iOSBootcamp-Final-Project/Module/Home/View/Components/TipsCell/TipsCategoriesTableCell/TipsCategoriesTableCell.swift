@@ -27,7 +27,7 @@ class TipsCategoriesTableCell: UITableViewCell {
         // Initialization code
     }
     
-    func setColViewDelegate(){
+    func setTipsCategoriesColView(){
         tipsCategoriesColView.delegate = self
         tipsCategoriesColView.dataSource = self
         tipsCategoriesColView.register(UINib(nibName: "TipsCategoriesColCell", bundle: nil), forCellWithReuseIdentifier: TipsCategoriesColCell.identifier)

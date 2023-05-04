@@ -26,7 +26,7 @@ class HeaderDoctorTableCell: UITableViewCell {
         // Initialization code
     }
     
-    func setData(doctor: Doctors?) {
+    func setData(doctor: DoctorsByCategory?) {
         doctorImage.sd_setImage(with: URL(string: doctor?.doctorImg ?? ""))
         doctorNameLabel.text = "dr. " + (doctor?.nama ?? "")
         doctorNumberLabel.text = doctor?.noDokter ?? ""

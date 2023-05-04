@@ -12,6 +12,8 @@
 		36B271E82A02838600BCD70A /* ProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271E62A02838600BCD70A /* ProfileTableCell.swift */; };
 		36B271E92A02838600BCD70A /* ProfileTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B271E72A02838600BCD70A /* ProfileTableCell.xib */; };
 		36B271EC2A03540600BCD70A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 36B271EB2A03540600BCD70A /* SDWebImage */; };
+		36B271EE2A03AC6000BCD70A /* DokterPenyakitDalamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271ED2A03AC6000BCD70A /* DokterPenyakitDalamTableCell.swift */; };
+		36B271F02A03AD3600BCD70A /* DokterAnakTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271EF2A03AD3600BCD70A /* DokterAnakTableCell.swift */; };
 		36C6458329E5519A0028D074 /* BannerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C6458129E5519A0028D074 /* BannerTableCell.swift */; };
 		36C6458429E5519A0028D074 /* BannerTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C6458229E5519A0028D074 /* BannerTableCell.xib */; };
 		36D9979A29E79CB900C98ADC /* TopTipsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9979829E79CB900C98ADC /* TopTipsTableCell.swift */; };
@@ -27,7 +29,7 @@
 		36DD244129DE69C4000A64E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DD244029DE69C4000A64E2 /* Assets.xcassets */; };
 		36DD244429DE69C4000A64E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DD244229DE69C4000A64E2 /* LaunchScreen.storyboard */; };
 		36DD245429DEAAE6000A64E2 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DD245329DEAAE6000A64E2 /* ApiService.swift */; };
-		36DD245729E3AB31000A64E2 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DD245629E3AB31000A64E2 /* ProductModel.swift */; };
+		36DD245729E3AB31000A64E2 /* TreatmentCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DD245629E3AB31000A64E2 /* TreatmentCategoryModel.swift */; };
 		36DD245B29E3BD85000A64E2 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DD245A29E3BD85000A64E2 /* TabBar.swift */; };
 		36DD245D29E3C0BA000A64E2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DD245C29E3C0BA000A64E2 /* HomeViewController.swift */; };
 		36DD246B29E3F3A1000A64E2 /* TreatmentCategoryColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DD246929E3F3A1000A64E2 /* TreatmentCategoryColCell.swift */; };
@@ -65,6 +67,8 @@
 		36B271E32A025F8E00BCD70A /* DoctorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListViewModel.swift; sourceTree = "<group>"; };
 		36B271E62A02838600BCD70A /* ProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCell.swift; sourceTree = "<group>"; };
 		36B271E72A02838600BCD70A /* ProfileTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableCell.xib; sourceTree = "<group>"; };
+		36B271ED2A03AC6000BCD70A /* DokterPenyakitDalamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DokterPenyakitDalamTableCell.swift; sourceTree = "<group>"; };
+		36B271EF2A03AD3600BCD70A /* DokterAnakTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DokterAnakTableCell.swift; sourceTree = "<group>"; };
 		36C6458129E5519A0028D074 /* BannerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableCell.swift; sourceTree = "<group>"; };
 		36C6458229E5519A0028D074 /* BannerTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerTableCell.xib; sourceTree = "<group>"; };
 		36D9979829E79CB900C98ADC /* TopTipsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTipsTableCell.swift; sourceTree = "<group>"; };
@@ -82,7 +86,7 @@
 		36DD244329DE69C4000A64E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36DD244529DE69C4000A64E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36DD245329DEAAE6000A64E2 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		36DD245629E3AB31000A64E2 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		36DD245629E3AB31000A64E2 /* TreatmentCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentCategoryModel.swift; sourceTree = "<group>"; };
 		36DD245A29E3BD85000A64E2 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		36DD245C29E3C0BA000A64E2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		36DD246929E3F3A1000A64E2 /* TreatmentCategoryColCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentCategoryColCell.swift; sourceTree = "<group>"; };
@@ -261,7 +265,7 @@
 		36DD245529E3AB1F000A64E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				36DD245629E3AB31000A64E2 /* ProductModel.swift */,
+				36DD245629E3AB31000A64E2 /* TreatmentCategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				36EEFB9429E66A9500C00AD1 /* DokterKandunganTableCell.swift */,
+				36B271ED2A03AC6000BCD70A /* DokterPenyakitDalamTableCell.swift */,
+				36B271EF2A03AD3600BCD70A /* DokterAnakTableCell.swift */,
 				36DD246829E3F348000A64E2 /* ReusableColCell */,
 			);
 			path = TreatmentCategoryCell;
@@ -643,15 +649,17 @@
 				D23C7A4529F9574200225256 /* HeaderDoctorTableCell.swift in Sources */,
 				36B271E82A02838600BCD70A /* ProfileTableCell.swift in Sources */,
 				36D9979E29E7B5C600C98ADC /* TopThreeTipsTableCell.swift in Sources */,
+				36B271F02A03AD3600BCD70A /* DokterAnakTableCell.swift in Sources */,
 				36DD243A29DE69C2000A64E2 /* SceneDelegate.swift in Sources */,
 				36B271E42A025F8E00BCD70A /* DoctorListViewModel.swift in Sources */,
 				36DD246B29E3F3A1000A64E2 /* TreatmentCategoryColCell.swift in Sources */,
 				36DD245429DEAAE6000A64E2 /* ApiService.swift in Sources */,
+				36B271EE2A03AC6000BCD70A /* DokterPenyakitDalamTableCell.swift in Sources */,
 				36EEFB8F29E64D6500C00AD1 /* CarouselTableCell.swift in Sources */,
 				36DD247529E3F50D000A64E2 /* TopMenuColCell.swift in Sources */,
 				36D997A129E7C40900C98ADC /* TipsCategoriesTableCell.swift in Sources */,
 				36EEFB9529E66A9500C00AD1 /* DokterKandunganTableCell.swift in Sources */,
-				36DD245729E3AB31000A64E2 /* ProductModel.swift in Sources */,
+				36DD245729E3AB31000A64E2 /* TreatmentCategoryModel.swift in Sources */,
 				D23C7A4E29FE3AB600225256 /* ReviewTagTableCell.swift in Sources */,
 				D23C7A6429FEB42D00225256 /* StarTableCell.swift in Sources */,
 				D23C7A4C29FE198900225256 /* SpecializationTableCell.swift in Sources */,
