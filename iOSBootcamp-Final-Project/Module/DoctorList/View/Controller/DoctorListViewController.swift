@@ -66,6 +66,11 @@ extension DoctorListViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "doctorDetailVC") as! DoctorDetailViewController
+        
+        if let doctorDetail = modelDoctors?[indexPath.row] {
+            viewController.doctorDetail = doctorDetail
+        }
+        
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

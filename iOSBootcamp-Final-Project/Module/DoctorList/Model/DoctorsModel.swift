@@ -16,4 +16,5 @@ struct Doctors: Codable {
     let detailSpesialisasi: String
     let previousPrice: String
     let price: String
+    let doctorImg: String
 }

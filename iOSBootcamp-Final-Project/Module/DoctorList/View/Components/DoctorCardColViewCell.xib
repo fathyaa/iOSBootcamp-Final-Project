@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXi-4L-yMS">
                         <rect key="frame" x="0.0" y="0.0" width="180" height="271"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indomie" translatesAutoresizingMaskIntoConstraints="NO" id="a9B-mm-TOU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dokter-proper" translatesAutoresizingMaskIntoConstraints="NO" id="a9B-mm-TOU">
                                 <rect key="frame" x="20" y="34" width="140" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="CM7-Bf-bFF"/>
@@ -47,13 +47,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dr. Iman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-mF-Yv4">
-                                <rect key="frame" x="20" y="176" width="140" height="20.5"/>
+                                <rect key="frame" x="20" y="172" width="140" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kebidanan dan blablablabl- 26 tahun" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0b-Zd-w7j">
-                                <rect key="frame" x="20" y="200.5" width="140" height="29"/>
+                                <rect key="frame" x="20" y="196.5" width="140" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                             <constraint firstAttribute="trailing" secondItem="Zdp-aw-fFd" secondAttribute="trailing" constant="20" id="MNg-UJ-8we"/>
                             <constraint firstAttribute="trailing" secondItem="eOa-Uq-xH4" secondAttribute="trailing" constant="20" id="QrQ-Za-hsR"/>
                             <constraint firstItem="U0b-Zd-w7j" firstAttribute="leading" secondItem="VXi-4L-yMS" secondAttribute="leading" constant="20" id="YlA-nV-Cic"/>
-                            <constraint firstItem="A2w-mF-Yv4" firstAttribute="top" secondItem="a9B-mm-TOU" secondAttribute="bottom" constant="14" id="diR-hV-XME"/>
+                            <constraint firstItem="A2w-mF-Yv4" firstAttribute="top" secondItem="a9B-mm-TOU" secondAttribute="bottom" constant="10" id="diR-hV-XME"/>
                             <constraint firstItem="A2w-mF-Yv4" firstAttribute="leading" secondItem="VXi-4L-yMS" secondAttribute="leading" constant="20" id="nNC-Ub-HaX"/>
                             <constraint firstAttribute="trailing" secondItem="U0b-Zd-w7j" secondAttribute="trailing" constant="20" id="qet-fg-bVx"/>
                             <constraint firstItem="a9B-mm-TOU" firstAttribute="leading" secondItem="VXi-4L-yMS" secondAttribute="leading" constant="20" id="rGG-YP-6bT"/>
@@ -109,7 +109,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="indomie" width="480" height="402"/>
+        <image name="dokter-proper" width="438" height="400"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

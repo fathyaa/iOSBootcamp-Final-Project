@@ -17,7 +17,6 @@ class SpecializationTableCell: UITableViewCell {
         specLabel.lineBreakMode = .byWordWrapping
         specLabel.textAlignment = .justified
         specLabel.translatesAutoresizingMaskIntoConstraints = false
-        specLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         return specLabel
     }()
     

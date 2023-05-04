@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DoctorCardColViewCell: UICollectionViewCell {
 
@@ -31,6 +32,7 @@ class DoctorCardColViewCell: UICollectionViewCell {
         doctorNameLabel.text = "dr. " + (doctors.nama.components(separatedBy: " ").first ?? " ")
         doctorDescLabel.text = doctors.spesialis + " - \(doctors.tahunPengalaman) tahun"
         priceLabel.text = doctors.price
+        doctorImage.sd_setImage(with: URL(string: doctors.doctorImg))
     }
 
 }

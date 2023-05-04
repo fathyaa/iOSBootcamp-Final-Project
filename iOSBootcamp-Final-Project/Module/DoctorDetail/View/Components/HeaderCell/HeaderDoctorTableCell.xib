@@ -22,26 +22,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="173"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baju" translatesAutoresizingMaskIntoConstraints="NO" id="Yxb-tN-buV">
-                                <rect key="frame" x="16" y="16" width="80" height="80"/>
+                                <rect key="frame" x="10" y="12" width="88" height="88"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="0TV-Gz-E4a"/>
-                                    <constraint firstAttribute="height" constant="80" id="sSK-YZ-qeR"/>
+                                    <constraint firstAttribute="width" constant="88" id="0TV-Gz-E4a"/>
+                                    <constraint firstAttribute="height" constant="88" id="sSK-YZ-qeR"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="dr. Donny Sutrisno Sp.OG" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPX-Jc-IB4">
-                                <rect key="frame" x="106" y="16" width="198" height="43"/>
+                                <rect key="frame" x="108" y="16" width="196" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="440/240/XI/dr/DPMPTSP/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOh-7u-To7">
-                                <rect key="frame" x="106" y="67" width="182" height="8.5"/>
+                                <rect key="frame" x="108" y="67" width="182" height="8.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="w9g-af-2wF">
-                                <rect key="frame" x="106" y="83.5" width="93.5" height="17"/>
+                                <rect key="frame" x="108" y="83.5" width="93.5" height="17"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bR0-eS-yFc">
                                         <rect key="frame" x="0.0" y="-0.5" width="22" height="17"/>
@@ -103,10 +103,10 @@
                         <constraints>
                             <constraint firstItem="w9g-af-2wF" firstAttribute="top" secondItem="FOh-7u-To7" secondAttribute="bottom" constant="8" id="1Z4-dP-aWj"/>
                             <constraint firstItem="w9g-af-2wF" firstAttribute="leading" secondItem="YPX-Jc-IB4" secondAttribute="leading" id="Gp8-nc-RXD"/>
-                            <constraint firstItem="Yxb-tN-buV" firstAttribute="top" secondItem="30W-Wa-bGm" secondAttribute="top" constant="16" id="IPS-eE-Igk"/>
+                            <constraint firstItem="Yxb-tN-buV" firstAttribute="top" secondItem="30W-Wa-bGm" secondAttribute="top" constant="12" id="IPS-eE-Igk"/>
                             <constraint firstItem="zXf-yu-tSu" firstAttribute="leading" secondItem="30W-Wa-bGm" secondAttribute="leading" constant="23" id="M88-6q-Gky"/>
                             <constraint firstItem="FOh-7u-To7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="YPX-Jc-IB4" secondAttribute="bottom" constant="8" id="QmN-GB-ONT"/>
-                            <constraint firstItem="Yxb-tN-buV" firstAttribute="leading" secondItem="30W-Wa-bGm" secondAttribute="leading" constant="16" id="SSZ-YS-sf8"/>
+                            <constraint firstItem="Yxb-tN-buV" firstAttribute="leading" secondItem="30W-Wa-bGm" secondAttribute="leading" constant="10" id="SSZ-YS-sf8"/>
                             <constraint firstItem="FOh-7u-To7" firstAttribute="leading" secondItem="YPX-Jc-IB4" secondAttribute="leading" id="SYm-mg-EWa"/>
                             <constraint firstItem="YPX-Jc-IB4" firstAttribute="leading" secondItem="Yxb-tN-buV" secondAttribute="trailing" constant="10" id="WGa-A2-OSt"/>
                             <constraint firstAttribute="bottom" secondItem="zXf-yu-tSu" secondAttribute="bottom" constant="15" id="ZK0-vF-n45"/>
@@ -129,6 +129,7 @@
                 <outlet property="doctorImage" destination="Yxb-tN-buV" id="Chi-09-7T0"/>
                 <outlet property="doctorNameLabel" destination="YPX-Jc-IB4" id="uhD-ci-EgN"/>
                 <outlet property="doctorNumberLabel" destination="FOh-7u-To7" id="ztx-66-Lt7"/>
+                <outlet property="experienceYearLabel" destination="IBN-mb-k0F" id="wCK-3C-q5z"/>
                 <outlet property="ratingLabel" destination="nFf-dM-p2x" id="0dy-67-Pgi"/>
                 <outlet property="reviewerCountLabel" destination="htF-fC-1El" id="USq-d4-XR0"/>
             </connections>

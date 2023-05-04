@@ -17,4 +17,13 @@ class InfoDoctorTableCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func setDataSpesialis(doctorSpes: String) {
+        infoLabel.text = doctorSpes
+    }
+    
+    func setDataLoc(doctorLoc: String){
+        infoIconImage.image = UIImage(named: "hospital")
+        infoLabel.text = doctorLoc
+    }
 }

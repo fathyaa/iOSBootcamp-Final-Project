@@ -40,6 +40,7 @@ class DoctorDetailViewController: UIViewController {
     @IBOutlet weak var consultView: UIView!
     
     var doctorDetailTableView: UITableView!
+    var doctorDetail: Doctors?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,15 +80,23 @@ extension DoctorDetailViewController: UITableViewDataSource, UITableViewDelegate
         switch DoctorDetailSection(indexPath.section){
         case .header:
             guard let cell = doctorDetailTableView.dequeueReusableCell(withIdentifier: HeaderDoctorTableCell.identifier, for: indexPath) as? HeaderDoctorTableCell else { return UITableViewCell() }
+            cell.setData(doctor: doctorDetail)
             return cell
             
         case .info:
             guard let cell = doctorDetailTableView.dequeueReusableCell(withIdentifier: InfoDoctorTableCell.identifier, for: indexPath) as? InfoDoctorTableCell else { return UITableViewCell() }
+            if indexPath.row == 0 {
+                cell.setDataSpesialis(doctorSpes: doctorDetail?.spesialis ?? "")
+            } else if indexPath.row == 1 {
+                cell.setDataLoc(doctorLoc: doctorDetail?.lokasi ?? "")
+            }
+                
             return cell
             
         case .specialization:
             guard let cell = doctorDetailTableView.dequeueReusableCell(withIdentifier: SpecializationTableCell.identifier, for: indexPath) as? SpecializationTableCell else { return UITableViewCell() }
             cell.setSpecCell()
+            cell.specializationLabel.text = doctorDetail?.detailSpesialisasi
             return cell
             
         case .reviewStar:
