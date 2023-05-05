@@ -45,6 +45,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bR0-eS-yFc">
                                         <rect key="frame" x="0.0" y="-0.5" width="22" height="17"/>
+                                        <color key="tintColor" red="0.94768363119999999" green="0.79267113290000002" blue="0.27744130309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFf-dM-p2x">
                                         <rect key="frame" x="26" y="0.0" width="22" height="17"/>

@@ -36,7 +36,12 @@ class DoctorDetailViewController: UIViewController {
 
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var previousPriceLabel: UILabel!
-    @IBOutlet weak var consultButton: UIButton!
+    @IBOutlet weak var consultButton: UIButton!{
+        didSet{
+            consultButton.tintColor = UIColor(named: "theme-color")
+            consultButton.layer.cornerRadius = 10
+        }
+    }
     @IBOutlet weak var consultView: UIView!
     
     var doctorDetailTableView: UITableView!
@@ -45,6 +50,7 @@ class DoctorDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
+        setPrice()
     }
     
     func registerTableView() {
@@ -63,6 +69,11 @@ class DoctorDetailViewController: UIViewController {
         if #available(iOS 15.0, *) {
             doctorDetailTableView.sectionHeaderTopPadding = 0
         }
+    }
+    
+    func setPrice(){
+        previousPriceLabel.text = doctorDetail?.previousPrice
+        priceLabel.text = doctorDetail?.price
     }
 }
 
@@ -86,9 +97,9 @@ extension DoctorDetailViewController: UITableViewDataSource, UITableViewDelegate
         case .info:
             guard let cell = doctorDetailTableView.dequeueReusableCell(withIdentifier: InfoDoctorTableCell.identifier, for: indexPath) as? InfoDoctorTableCell else { return UITableViewCell() }
             if indexPath.row == 0 {
-                cell.setDataSpesialis(doctorSpes: doctorDetail?.spesialis ?? "")
+                cell.setDataSpesialis(doctorSpes: doctorDetail?.specialization ?? "")
             } else if indexPath.row == 1 {
-                cell.setDataLoc(doctorLoc: doctorDetail?.lokasi ?? "")
+                cell.setDataLoc(doctorLoc: doctorDetail?.location ?? "")
             }
                 
             return cell
@@ -96,7 +107,7 @@ extension DoctorDetailViewController: UITableViewDataSource, UITableViewDelegate
         case .specialization:
             guard let cell = doctorDetailTableView.dequeueReusableCell(withIdentifier: SpecializationTableCell.identifier, for: indexPath) as? SpecializationTableCell else { return UITableViewCell() }
             cell.setSpecCell()
-            cell.specializationLabel.text = doctorDetail?.detailSpesialisasi
+            cell.specializationLabel.text = doctorDetail?.specializationDetail
             return cell
             
         case .reviewStar:

@@ -13,12 +13,12 @@ struct Doctors: Codable {
 }
 
 struct DoctorsByCategory: Codable {
-    let nama: String
-    let noDokter: String
-    let spesialis: String
-    let tahunPengalaman: Int
-    let lokasi: String
-    let detailSpesialisasi: String
+    let name: String
+    let doctorNumber: String
+    let specialization: String
+    let experienceYear: Int
+    let location: String
+    let specializationDetail: String
     let previousPrice: String
     let price: String
     let doctorImg: String

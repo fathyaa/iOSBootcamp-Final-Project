@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,29 +19,30 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8G-6V-RDF">
-                        <rect key="frame" x="0.0" y="0.0" width="349" height="35.333333333333336"/>
+                        <rect key="frame" x="0.0" y="0.0" width="349" height="35.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="4em-qh-xLa">
-                                <rect key="frame" x="20" y="14.999999999999998" width="309" height="20.333333333333329"/>
+                                <rect key="frame" x="20" y="15" width="309" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disukai Pengguna" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Bq-hi-mIw">
-                                        <rect key="frame" x="0.0" y="0.0" width="158" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Far-Lp-tpG">
-                                        <rect key="frame" x="248" y="0.0" width="61" height="20.333333333333332"/>
+                                        <rect key="frame" x="248" y="0.0" width="61" height="20.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Two-cM-Az9">
-                                                <rect key="frame" x="0.0" y="-0.33333333333333215" width="30" height="19.999999999999996"/>
+                                                <rect key="frame" x="0.0" y="-0.5" width="30" height="20.5"/>
+                                                <color key="tintColor" red="0.94768363119999999" green="0.79267113290000002" blue="0.27744130309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="Elv-pF-y1R"/>
                                                     <constraint firstAttribute="height" constant="30" id="n7u-tZ-wl5"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="4.6" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ne4-sK-iFq">
-                                                <rect key="frame" x="33" y="0.0" width="28" height="20.333333333333332"/>
+                                                <rect key="frame" x="33" y="0.0" width="28" height="20.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="HmR-oj-mrs"/>
                                                 </constraints>

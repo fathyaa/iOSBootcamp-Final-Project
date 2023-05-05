@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36317E0E2A04E87B00556203 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36317E0D2A04E87B00556203 /* GoogleService-Info.plist */; };
+		36317E112A04F3A900556203 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 36317E102A04F3A900556203 /* FirebaseAuth */; };
+		36317E132A04F3A900556203 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 36317E122A04F3A900556203 /* FirebaseFirestore */; };
+		36317E152A04F3A900556203 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 36317E142A04F3A900556203 /* FirebaseStorage */; };
 		36B271E12A025BF900BCD70A /* DoctorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271E02A025BF900BCD70A /* DoctorsModel.swift */; };
 		36B271E42A025F8E00BCD70A /* DoctorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271E32A025F8E00BCD70A /* DoctorListViewModel.swift */; };
 		36B271E82A02838600BCD70A /* ProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271E62A02838600BCD70A /* ProfileTableCell.swift */; };
@@ -14,6 +18,10 @@
 		36B271EC2A03540600BCD70A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 36B271EB2A03540600BCD70A /* SDWebImage */; };
 		36B271EE2A03AC6000BCD70A /* DokterPenyakitDalamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271ED2A03AC6000BCD70A /* DokterPenyakitDalamTableCell.swift */; };
 		36B271F02A03AD3600BCD70A /* DokterAnakTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271EF2A03AD3600BCD70A /* DokterAnakTableCell.swift */; };
+		36B271F62A049B1800BCD70A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271F42A049B1800BCD70A /* LoginViewController.swift */; };
+		36B271F72A049B1800BCD70A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B271F52A049B1800BCD70A /* LoginViewController.xib */; };
+		36B271FF2A04AA5C00BCD70A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271FD2A04AA5C00BCD70A /* RegisterViewController.swift */; };
+		36B272002A04AA5C00BCD70A /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B271FE2A04AA5C00BCD70A /* RegisterViewController.xib */; };
 		36C6458329E5519A0028D074 /* BannerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C6458129E5519A0028D074 /* BannerTableCell.swift */; };
 		36C6458429E5519A0028D074 /* BannerTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36C6458229E5519A0028D074 /* BannerTableCell.xib */; };
 		36D9979A29E79CB900C98ADC /* TopTipsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9979829E79CB900C98ADC /* TopTipsTableCell.swift */; };
@@ -63,12 +71,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36317E0D2A04E87B00556203 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36B271E02A025BF900BCD70A /* DoctorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsModel.swift; sourceTree = "<group>"; };
 		36B271E32A025F8E00BCD70A /* DoctorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListViewModel.swift; sourceTree = "<group>"; };
 		36B271E62A02838600BCD70A /* ProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCell.swift; sourceTree = "<group>"; };
 		36B271E72A02838600BCD70A /* ProfileTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableCell.xib; sourceTree = "<group>"; };
 		36B271ED2A03AC6000BCD70A /* DokterPenyakitDalamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DokterPenyakitDalamTableCell.swift; sourceTree = "<group>"; };
 		36B271EF2A03AD3600BCD70A /* DokterAnakTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DokterAnakTableCell.swift; sourceTree = "<group>"; };
+		36B271F42A049B1800BCD70A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		36B271F52A049B1800BCD70A /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		36B271FD2A04AA5C00BCD70A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		36B271FE2A04AA5C00BCD70A /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		36C6458129E5519A0028D074 /* BannerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableCell.swift; sourceTree = "<group>"; };
 		36C6458229E5519A0028D074 /* BannerTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerTableCell.xib; sourceTree = "<group>"; };
 		36D9979829E79CB900C98ADC /* TopTipsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTipsTableCell.swift; sourceTree = "<group>"; };
@@ -125,6 +138,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B271EC2A03540600BCD70A /* SDWebImage in Frameworks */,
+				36317E152A04F3A900556203 /* FirebaseStorage in Frameworks */,
+				36317E112A04F3A900556203 /* FirebaseAuth in Frameworks */,
+				36317E132A04F3A900556203 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +170,40 @@
 				36B271E72A02838600BCD70A /* ProfileTableCell.xib */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		36B271F12A049A6700BCD70A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				36B271F32A049ABF00BCD70A /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		36B271F22A049A7000BCD70A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				36B271FC2A04AA3200BCD70A /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		36B271F32A049ABF00BCD70A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36B271F42A049B1800BCD70A /* LoginViewController.swift */,
+				36B271F52A049B1800BCD70A /* LoginViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36B271FC2A04AA3200BCD70A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36B271FD2A04AA5C00BCD70A /* RegisterViewController.swift */,
+				36B271FE2A04AA5C00BCD70A /* RegisterViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		36D9979529E794AC00C98ADC /* TopTipsTableCell */ = {
@@ -209,6 +259,7 @@
 				36DD244C29DEA949000A64E2 /* Module */,
 				36DD244B29DEA940000A64E2 /* Networking */,
 				36DD244029DE69C4000A64E2 /* Assets.xcassets */,
+				36317E0D2A04E87B00556203 /* GoogleService-Info.plist */,
 				36DD244529DE69C4000A64E2 /* Info.plist */,
 			);
 			path = "iOSBootcamp-Final-Project";
@@ -225,6 +276,8 @@
 		36DD244C29DEA949000A64E2 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				36B271F22A049A7000BCD70A /* Register */,
+				36B271F12A049A6700BCD70A /* Login */,
 				36DD245029DEA9CD000A64E2 /* Home */,
 				36DD248729E3F947000A64E2 /* DoctorList */,
 				36DD248B29E3F9DA000A64E2 /* DoctorDetail */,
@@ -569,6 +622,9 @@
 			name = "iOSBootcamp-Final-Project";
 			packageProductDependencies = (
 				36B271EB2A03540600BCD70A /* SDWebImage */,
+				36317E102A04F3A900556203 /* FirebaseAuth */,
+				36317E122A04F3A900556203 /* FirebaseFirestore */,
+				36317E142A04F3A900556203 /* FirebaseStorage */,
 			);
 			productName = "iOSBootcamp-Final-Project";
 			productReference = 36DD243429DE69C2000A64E2 /* iOSBootcamp-Final-Project.app */;
@@ -600,6 +656,7 @@
 			mainGroup = 36DD242B29DE69C2000A64E2;
 			packageReferences = (
 				36B271EA2A03540600BCD70A /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				36317E0F2A04F3A900556203 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 36DD243529DE69C2000A64E2 /* Products */;
 			projectDirPath = "";
@@ -620,10 +677,13 @@
 				36D9979B29E79CB900C98ADC /* TopTipsTableCell.xib in Resources */,
 				36C6458429E5519A0028D074 /* BannerTableCell.xib in Resources */,
 				D23C7A6529FEB42D00225256 /* StarTableCell.xib in Resources */,
+				36B272002A04AA5C00BCD70A /* RegisterViewController.xib in Resources */,
 				36DD244429DE69C4000A64E2 /* LaunchScreen.storyboard in Resources */,
 				36DD246C29E3F3A1000A64E2 /* TreatmentCategoryColCell.xib in Resources */,
 				36D997A529E7C43C00C98ADC /* TipsCategoriesColCell.xib in Resources */,
+				36B271F72A049B1800BCD70A /* LoginViewController.xib in Resources */,
 				36DD244129DE69C4000A64E2 /* Assets.xcassets in Resources */,
+				36317E0E2A04E87B00556203 /* GoogleService-Info.plist in Resources */,
 				36DD243F29DE69C2000A64E2 /* Main.storyboard in Resources */,
 				36DD247629E3F50D000A64E2 /* TopMenuColCell.xib in Resources */,
 				36EEFB8D29E64C8200C00AD1 /* CarouselColCell.xib in Resources */,
@@ -664,7 +724,9 @@
 				D23C7A6429FEB42D00225256 /* StarTableCell.swift in Sources */,
 				D23C7A4C29FE198900225256 /* SpecializationTableCell.swift in Sources */,
 				36EEFB8C29E64C8200C00AD1 /* CarouselColCell.swift in Sources */,
+				36B271FF2A04AA5C00BCD70A /* RegisterViewController.swift in Sources */,
 				36DD248629E3F847000A64E2 /* HomeViewModel.swift in Sources */,
+				36B271F62A049B1800BCD70A /* LoginViewController.swift in Sources */,
 				36DD248029E3F7C2000A64E2 /* AccountModel.swift in Sources */,
 				36DD245B29E3BD85000A64E2 /* TabBar.swift in Sources */,
 				36D997A429E7C43C00C98ADC /* TipsCategoriesColCell.swift in Sources */,
@@ -825,6 +887,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOSBootcamp-Final-Project/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Good Doctor";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -853,6 +916,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOSBootcamp-Final-Project/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Good Doctor";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -896,6 +960,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		36317E0F2A04F3A900556203 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		36B271EA2A03540600BCD70A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -907,6 +979,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		36317E102A04F3A900556203 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36317E0F2A04F3A900556203 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		36317E122A04F3A900556203 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36317E0F2A04F3A900556203 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		36317E142A04F3A900556203 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36317E0F2A04F3A900556203 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		36B271EB2A03540600BCD70A /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 36B271EA2A03540600BCD70A /* XCRemoteSwiftPackageReference "SDWebImage" */;

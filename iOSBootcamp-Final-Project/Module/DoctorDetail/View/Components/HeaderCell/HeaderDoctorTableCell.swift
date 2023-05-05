@@ -28,8 +28,8 @@ class HeaderDoctorTableCell: UITableViewCell {
     
     func setData(doctor: DoctorsByCategory?) {
         doctorImage.sd_setImage(with: URL(string: doctor?.doctorImg ?? ""))
-        doctorNameLabel.text = "dr. " + (doctor?.nama ?? "")
-        doctorNumberLabel.text = doctor?.noDokter ?? ""
-        experienceYearLabel.text = "\(doctor?.tahunPengalaman ?? 0) tahun"
+        doctorNameLabel.text = "dr. " + (doctor?.name ?? "")
+        doctorNumberLabel.text = doctor?.doctorNumber ?? ""
+        experienceYearLabel.text = "\(doctor?.experienceYear ?? 0) tahun"
     }
 }
