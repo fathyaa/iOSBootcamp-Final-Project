@@ -13,6 +13,7 @@ class TabBar: UITabBarController {
         super.viewDidLoad()
         setupViewControllers()
         self.view.backgroundColor = .white
+        tabBar.tintColor = UIColor(named: "theme-color")
     }
     
     func setupViewControllers() {

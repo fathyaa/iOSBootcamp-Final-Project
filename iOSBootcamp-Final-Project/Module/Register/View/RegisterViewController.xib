@@ -12,11 +12,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="iOSBootcamp_Final_Project" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="p5e-Vj-1Mp" id="dpz-8P-W0s"/>
-                <outlet property="namaLengkapLabel" destination="sxK-jY-DUe" id="mhT-4U-XNx"/>
                 <outlet property="passwordTextField" destination="0LR-Ij-ARe" id="Lhj-fy-TlQ"/>
                 <outlet property="registButton" destination="T8Q-O9-ixk" id="DiH-AI-ghX"/>
                 <outlet property="registView" destination="uh3-xt-kbo" id="mSf-6l-fBn"/>
                 <outlet property="shadowView" destination="1TY-Q2-lco" id="XRz-x7-9lF"/>
+                <outlet property="usernameTextField" destination="sxK-jY-DUe" id="mhT-4U-XNx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,7 +40,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nama Lengkap" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sxK-jY-DUe">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sxK-jY-DUe">
                                             <rect key="frame" x="0.0" y="35.5" width="374" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>

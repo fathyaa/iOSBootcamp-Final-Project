@@ -72,8 +72,10 @@ class DoctorDetailViewController: UIViewController {
     }
     
     func setPrice(){
-        previousPriceLabel.text = doctorDetail?.previousPrice
-        priceLabel.text = doctorDetail?.price
+        let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: "Rp." + (doctorDetail?.previousPrice ?? ""))
+        attributedString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributedString.length))
+        previousPriceLabel.attributedText = attributedString
+        priceLabel.text = "Rp." + (doctorDetail?.price ?? "Undefined")
     }
 }
 
@@ -112,10 +114,12 @@ extension DoctorDetailViewController: UITableViewDataSource, UITableViewDelegate
             
         case .reviewStar:
             guard let cell = doctorDetailTableView.dequeueReusableCell(withIdentifier: StarTableCell.identifier, for: indexPath) as? StarTableCell else { return UITableViewCell() }
+            cell.ratingLabel.text = doctorDetail?.rating
             return cell
             
         case .reviewTag:
             guard let cell = doctorDetailTableView.dequeueReusableCell(withIdentifier: ReviewTagTableCell.identifier, for: indexPath) as? ReviewTagTableCell else { return UITableViewCell() }
+            cell.doctorDetail = doctorDetail
             cell.setColViewDelegate()
             return cell
         }

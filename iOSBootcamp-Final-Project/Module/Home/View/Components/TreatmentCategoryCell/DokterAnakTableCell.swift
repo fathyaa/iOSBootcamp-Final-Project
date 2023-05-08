@@ -11,6 +11,7 @@ class DokterAnakTableCell: UITableViewCell {
 
     static let identifier = "DokterAnakTableCell"
     var homeVCDelegate: HomeViewControllerDelegate?
+    var modelHome: [Home]?
     var drAnakColCell: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -55,6 +56,9 @@ extension DokterAnakTableCell: UICollectionViewDelegateFlowLayout, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = drAnakColCell.dequeueReusableCell(withReuseIdentifier: TreatmentCategoryColCell.identifier, for: indexPath) as? TreatmentCategoryColCell else { return UICollectionViewCell() }
+        if let homeData = modelHome?[3] {
+            cell.setData(homeItems: homeData.items[indexPath.row])
+        }
         return cell
     }
     

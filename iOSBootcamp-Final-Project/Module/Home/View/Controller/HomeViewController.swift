@@ -52,11 +52,52 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet var homeSearchBar: UISearchBar!
+    var homeViewModel: HomeViewModel?
+    var modelHome: [Home]?
+    
+    let nameLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Your Name"
+        lbl.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return lbl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBar()
         setTableView()
-        navigationItem.titleView = homeSearchBar
+        bindAPIData()
+        fetchUserInHome()
+    }
+    
+    func setNavBar(){
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        let addressLabel: UILabel = {
+            let lbl = UILabel()
+            lbl.text = "Jl. Your address will appear here"
+            lbl.font = UIFont.systemFont(ofSize: 13, weight: .light)
+            return lbl
+        }()
+        
+        let notifButtonImage: UIImageView = {
+            let btnImage = UIImageView()
+            btnImage.image = UIImage(systemName: "bell.fill")
+            btnImage.tintColor = UIColor(named: "theme-color")
+            btnImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
+            btnImage.heightAnchor.constraint(equalToConstant: 30).isActive = true
+            return btnImage
+        }()
+        
+        let leftStackView = UIStackView(arrangedSubviews: [nameLabel, addressLabel])
+        leftStackView.spacing = 1
+        leftStackView.axis = .vertical
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: leftStackView)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: notifButtonImage)
+        
     }
     
     func setTableView() {
@@ -74,6 +115,35 @@ class HomeViewController: UIViewController {
         
         homeTableView.sectionFooterHeight = 0.0
         homeTableView.sectionHeaderHeight = 0.0
+    }
+    
+    func bindAPIData() {
+        self.homeViewModel = HomeViewModel(urlString: "http://localhost:3003/home", apiService: ApiService())
+        self.homeViewModel?.bindHomeData = { homeData in
+            if let modelData = homeData {
+                self.modelHome = modelData
+            } else {
+                self.homeTableView.backgroundColor = .red
+            }
+            print("reload data")
+            DispatchQueue.main.async {
+                self.homeTableView.reloadData()
+            }
+        }
+    }
+    
+    func fetchUserInHome() {
+        AuthService.shared.fetchUser { [weak self] user, error in
+            guard let self = self else { return }
+            if let error = error {
+                AlertManager.showFetchingUserError(on: self, with: error)
+                return
+            }
+            
+            if let user = user {
+                self.nameLabel.text = user.name
+            }
+        }
     }
 }
 
@@ -104,18 +174,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterKandunganTableCell.identifier, for: indexPath) as? DokterKandunganTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
             cell.homeVCDelegate = self
+            cell.modelHome = modelHome
             cell.setDokterKandunganColView()
             return cell
         case .drPenyakitDalamCategory:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterPenyakitDalamTableCell.identifier, for: indexPath) as? DokterPenyakitDalamTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
             cell.homeVCDelegate = self
+            cell.modelHome = modelHome
             cell.setDokterPenyakitDalamColView()
             return cell
         case .drSpesialisAnakCategory:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterAnakTableCell.identifier, for: indexPath) as? DokterAnakTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
             cell.homeVCDelegate = self
+            cell.modelHome = modelHome
             cell.setDokterAnakColView()
             return cell
         case .topTips:
@@ -214,15 +287,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        switch HomeSection(section){
-        case .topMenu, .promotionBanner, .carouselBanner, .topThreeTips, .categoriesTips:
-            return 0
-        case .drKandunganCategory, .topTips, .drPenyakitDalamCategory, .drSpesialisAnakCategory:
-            return UITableView.automaticDimension
-        }
-    }
-    
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
     }
@@ -233,7 +297,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return 85
         case .topTips:
             return 60
-        case .topMenu, .promotionBanner, .carouselBanner, .topThreeTips, .categoriesTips:
+        case .topMenu:
+            return 50
+        case .promotionBanner, .carouselBanner, .topThreeTips, .categoriesTips:
             return 0
         }
     }

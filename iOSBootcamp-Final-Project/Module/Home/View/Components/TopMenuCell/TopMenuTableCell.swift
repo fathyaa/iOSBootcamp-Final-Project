@@ -21,6 +21,7 @@ class TopMenuTableCell: UITableViewCell {
     }()
     
     var menuIcon = ["stethoscope", "person-pregnant", "doctor", "capsules", "book-medical", "ambulance"]
+    var menuLabel = ["Konsultasi Dokter", "Toko Kesehatan", "Janji Medis", "Program Hamil", "Benefit Asuransi & Perusahaan", "Asuransi AXA Good Health"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,6 +58,7 @@ extension TopMenuTableCell: UICollectionViewDelegateFlowLayout, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = topMenuColView.dequeueReusableCell(withReuseIdentifier: TopMenuColCell.identifier, for: indexPath) as? TopMenuColCell else { return UICollectionViewCell() }
         cell.menuImage.image = UIImage(named: menuIcon[indexPath.row])
+        cell.menuLabel.text = menuLabel[indexPath.row]
         return cell
     }
     

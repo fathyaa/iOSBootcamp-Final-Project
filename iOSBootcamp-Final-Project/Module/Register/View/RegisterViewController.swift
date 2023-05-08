@@ -25,8 +25,7 @@ class RegisterViewController: UIViewController {
             registView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         }
     }
-
-    @IBOutlet weak var namaLengkapLabel: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!{
         didSet{
             emailTextField.textContentType = .emailAddress
@@ -48,9 +47,49 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.registButton.addTarget(self, action: #selector(didTapRegist), for: .touchUpInside)
+        navigationController?.isNavigationBarHidden = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    @objc func didTapRegist() {
+        let registerUserRequest = RegisterUserRequest(
+            username: self.usernameTextField.text ?? "",
+            email: self.emailTextField.text ?? "",
+            password: self.passwordTextField.text ?? "")
+        
+        if !Validator.isValidUsername(for: registerUserRequest.username ?? "") {
+            AlertManager.showInvalidUsernameAlert(on: self)
+            return
+        }
+        
+        if !Validator.isValidEmail(for: registerUserRequest.email ?? "") {
+            AlertManager.showInvalidEmailAlert(on: self)
+            return
+        }
+        
+        if !Validator.isValidPassword(for: registerUserRequest.password ?? "") {
+            AlertManager.showInvalidPasswordAlert(on: self)
+            return
+        }
+        
+        AuthService.shared.registerUser(with: registerUserRequest) { wasRegistered, error in
+            
+            if let error = error {
+                AlertManager.showRegistrationErrorAlert(on: self, with: error)
+                return
+            }
+            
+            if wasRegistered {
+                if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                    sceneDelegate.checkAuthentication()
+                }
+            } else {
+                AlertManager.showRegistrationErrorAlert(on: self)
+            }
+        }
     }
 }

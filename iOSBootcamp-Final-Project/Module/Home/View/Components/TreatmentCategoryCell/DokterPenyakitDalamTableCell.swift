@@ -11,6 +11,7 @@ class DokterPenyakitDalamTableCell: UITableViewCell {
 
     static let identifier = "DokterPenyakitDalamTableCell"
     var homeVCDelegate: HomeViewControllerDelegate?
+    var modelHome: [Home]?
     var drPenyakitDalamColView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -55,6 +56,9 @@ extension DokterPenyakitDalamTableCell: UICollectionViewDelegateFlowLayout, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = drPenyakitDalamColView.dequeueReusableCell(withReuseIdentifier: TreatmentCategoryColCell.identifier, for: indexPath) as? TreatmentCategoryColCell else { return UICollectionViewCell() }
+        if let homeData = modelHome?[2] {
+            cell.setData(homeItems: homeData.items[indexPath.row])
+        }
         return cell
     }
     

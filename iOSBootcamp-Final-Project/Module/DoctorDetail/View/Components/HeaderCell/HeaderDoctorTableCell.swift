@@ -31,5 +31,6 @@ class HeaderDoctorTableCell: UITableViewCell {
         doctorNameLabel.text = "dr. " + (doctor?.name ?? "")
         doctorNumberLabel.text = doctor?.doctorNumber ?? ""
         experienceYearLabel.text = "\(doctor?.experienceYear ?? 0) tahun"
+        ratingLabel.text = doctor?.rating 
     }
 }

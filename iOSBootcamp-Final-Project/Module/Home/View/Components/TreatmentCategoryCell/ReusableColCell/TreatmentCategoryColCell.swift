@@ -23,9 +23,29 @@ class TreatmentCategoryColCell: UICollectionViewCell {
     }
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func setData(homeItems: Items?){
+        coverImage.sd_setImage(with: URL(string: homeItems?.thumbnailImg ?? ""))
+        titleLabel.text = homeItems?.title
+        
+        if homeItems?.category == "kandunganKebidanan" {
+            categoryIcon.image = UIImage(systemName: "pills.circle")
+            subtitleLabel.text = "Konsultasi ke spesialis kebidanan"
+        }
+        
+        if homeItems?.category == "penyakitDalam" {
+            categoryIcon.image = UIImage(systemName: "heart.circle")
+            subtitleLabel.text = "Konsultasi ke spesialis penyakit dalam"
+        }
+        
+        if homeItems?.category == "spesialisAnak" {
+            categoryIcon.image = UIImage(systemName: "stethoscope.circle.fill")
+            subtitleLabel.text = "Konsultasi ke spesialis anak"
+        }
+    }
 }

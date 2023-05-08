@@ -10,7 +10,9 @@ import UIKit
 class StarTableCell: UITableViewCell {
 
     static let identifier = "StarTableCell"
-    override func awakeFromNib() {
+    @IBOutlet weak var ratingLabel: UILabel!
+    
+        override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }

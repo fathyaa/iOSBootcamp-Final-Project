@@ -33,6 +33,7 @@ class DoctorCardColViewCell: UICollectionViewCell {
         doctorDescLabel.text = (doctors?.items[index].specialization ?? "") + " - \(doctors?.items[index].experienceYear ?? 0) tahun"
         priceLabel.text = doctors?.items[index].price
         doctorImage.sd_setImage(with: URL(string: doctors?.items[index].doctorImg ?? ""))
+        ratingLabel.text = doctors?.items[index].rating
     }
 
 }

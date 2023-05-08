@@ -57,9 +57,31 @@ class LoginViewController: UIViewController {
 
     @objc func didTapLogin() {
         print("clicked didTapLogin")
-        let home = TabBar()
-        self.navigationController?.pushViewController(home, animated: true)
-        navigationController?.isNavigationBarHidden = true
+        let loginRequest = LoginUserRequest(
+            email: self.emailTextField.text ?? "",
+            password: self.passwordTextField.text ?? ""
+        )
+        
+        if !Validator.isValidEmail(for: loginRequest.email) {
+            AlertManager.showInvalidEmailAlert(on: self)
+            return
+        }
+        
+        if !Validator.isValidPassword(for: loginRequest.password) {
+            AlertManager.showInvalidPasswordAlert(on: self)
+            return
+        }
+        
+        AuthService.shared.loginUser(with: loginRequest) { error in
+            if let  error = error {
+                AlertManager.showSignInErrorAlert(on: self, with: error)
+                return
+            }
+            
+            if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                sceneDelegate.checkAuthentication()
+            }
+        }
     }
     
     @objc func didTapRegist() {

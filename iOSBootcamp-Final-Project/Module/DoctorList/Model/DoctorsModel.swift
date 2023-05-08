@@ -22,4 +22,12 @@ struct DoctorsByCategory: Codable {
     let previousPrice: String
     let price: String
     let doctorImg: String
+    let rating: String
+    let reviewCount: Int
+    let reviews: [Review]
+}
+
+struct Review: Codable {
+    let tag: String
+    let tagCount: Int
 }

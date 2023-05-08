@@ -33,8 +33,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TiW-VU-tjE">
                                 <rect key="frame" x="27" y="9" width="67" height="67"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="ambulance" translatesAutoresizingMaskIntoConstraints="NO" id="jwj-um-h2G">
-                                        <rect key="frame" x="4" y="8" width="59" height="51"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jwj-um-h2G">
+                                        <rect key="frame" x="4" y="8" width="59" height="50.5"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES" image="YES"/>
                                         </accessibility>
@@ -85,7 +85,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ambulance" width="128" height="128"/>
+        <image name="bell" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

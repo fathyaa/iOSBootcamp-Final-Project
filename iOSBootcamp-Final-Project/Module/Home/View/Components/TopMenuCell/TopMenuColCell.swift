@@ -27,4 +27,8 @@ class TopMenuColCell: UICollectionViewCell {
         // Initialization code
     }
 
+    func setData(homeItems: Items?){
+        menuImage.sd_setImage(with: URL(string: homeItems?.thumbnailImg ?? "https://i.ibb.co/jZq7FW0/stethoscope.png"))
+        menuLabel.text = homeItems?.title ?? "Not defined"
+    }
 }

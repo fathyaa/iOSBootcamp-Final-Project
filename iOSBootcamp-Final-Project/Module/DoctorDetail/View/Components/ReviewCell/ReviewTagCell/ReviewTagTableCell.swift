@@ -10,6 +10,7 @@ import UIKit
 class ReviewTagTableCell: UITableViewCell {
 
     static let identifier = "ReviewTagTableCell"
+    var doctorDetail: DoctorsByCategory?
     var reviewTagColView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -54,6 +55,11 @@ extension ReviewTagTableCell: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = reviewTagColView.dequeueReusableCell(withReuseIdentifier: ReviewTagColCell.identifier, for: indexPath) as? ReviewTagColCell else { return UICollectionViewCell() }
+        
+        if let reviews = doctorDetail?.reviews[indexPath.row] {
+            cell.tagLabel.text = reviews.tag
+            cell.reviewerCountLabel.text = "\(reviews.tagCount)"
+        }
         return cell
     }
     
@@ -63,8 +69,5 @@ extension ReviewTagTableCell: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 3
     }
 }
