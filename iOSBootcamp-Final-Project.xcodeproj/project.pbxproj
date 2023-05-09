@@ -14,6 +14,9 @@
 		36317E172A04FBF400556203 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36317E162A04FBF400556203 /* AuthService.swift */; };
 		36317E1A2A04FCAF00556203 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36317E192A04FCAF00556203 /* RegisterUserRequest.swift */; };
 		36317E1D2A0502D600556203 /* LoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36317E1C2A0502D600556203 /* LoginUserRequest.swift */; };
+		3652810B2A09F35800A0F4BA /* account.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3652810A2A09F35800A0F4BA /* account.rtf */; };
+		3652810D2A09F37B00A0F4BA /* doctors.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3652810C2A09F37B00A0F4BA /* doctors.rtf */; };
+		3652810F2A09F38700A0F4BA /* home.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3652810E2A09F38700A0F4BA /* home.rtf */; };
 		36B271E12A025BF900BCD70A /* DoctorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271E02A025BF900BCD70A /* DoctorsModel.swift */; };
 		36B271E42A025F8E00BCD70A /* DoctorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271E32A025F8E00BCD70A /* DoctorListViewModel.swift */; };
 		36B271E82A02838600BCD70A /* ProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B271E62A02838600BCD70A /* ProfileTableCell.swift */; };
@@ -82,6 +85,9 @@
 		36317E162A04FBF400556203 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		36317E192A04FCAF00556203 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
 		36317E1C2A0502D600556203 /* LoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserRequest.swift; sourceTree = "<group>"; };
+		3652810A2A09F35800A0F4BA /* account.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = account.rtf; sourceTree = "<group>"; };
+		3652810C2A09F37B00A0F4BA /* doctors.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = doctors.rtf; sourceTree = "<group>"; };
+		3652810E2A09F38700A0F4BA /* home.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = home.rtf; sourceTree = "<group>"; };
 		36B271E02A025BF900BCD70A /* DoctorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsModel.swift; sourceTree = "<group>"; };
 		36B271E32A025F8E00BCD70A /* DoctorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListViewModel.swift; sourceTree = "<group>"; };
 		36B271E62A02838600BCD70A /* ProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCell.swift; sourceTree = "<group>"; };
@@ -177,6 +183,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		365281092A09F2AA00A0F4BA /* JsonForAPI */ = {
+			isa = PBXGroup;
+			children = (
+				3652810E2A09F38700A0F4BA /* home.rtf */,
+				3652810C2A09F37B00A0F4BA /* doctors.rtf */,
+				3652810A2A09F35800A0F4BA /* account.rtf */,
+			);
+			path = JsonForAPI;
+			sourceTree = "<group>";
+		};
 		36B271DF2A025A8900BCD70A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +262,7 @@
 				36DD244029DE69C4000A64E2 /* Assets.xcassets */,
 				36B9B0D02A05FBA30060F8C6 /* Validator.swift */,
 				36B9B0D22A0614A80060F8C6 /* AlertManager.swift */,
+				36EEFB9729E6735A00C00AD1 /* RoundCorners.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -297,12 +314,12 @@
 		36DD243629DE69C2000A64E2 /* iOSBootcamp-Final-Project */ = {
 			isa = PBXGroup;
 			children = (
-				36EEFB9629E6734500C00AD1 /* Extensions */,
 				36DD244E29DEA979000A64E2 /* Core */,
 				36DD244D29DEA951000A64E2 /* Storyboard */,
 				36DD244C29DEA949000A64E2 /* Module */,
 				36DD244B29DEA940000A64E2 /* Networking */,
 				36B9B0CF2A05FB2A0060F8C6 /* Supporting */,
+				365281092A09F2AA00A0F4BA /* JsonForAPI */,
 				36317E0D2A04E87B00556203 /* GoogleService-Info.plist */,
 				36DD244529DE69C4000A64E2 /* Info.plist */,
 			);
@@ -531,14 +548,6 @@
 			path = CarouselCell;
 			sourceTree = "<group>";
 		};
-		36EEFB9629E6734500C00AD1 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				36EEFB9729E6735A00C00AD1 /* RoundCorners.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		36EEFB9929E69E1400C00AD1 /* TipsCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,10 +727,13 @@
 				36B272002A04AA5C00BCD70A /* RegisterViewController.xib in Resources */,
 				36DD244429DE69C4000A64E2 /* LaunchScreen.storyboard in Resources */,
 				36DD246C29E3F3A1000A64E2 /* TreatmentCategoryColCell.xib in Resources */,
+				3652810F2A09F38700A0F4BA /* home.rtf in Resources */,
 				36D997A529E7C43C00C98ADC /* TipsCategoriesColCell.xib in Resources */,
 				36B271F72A049B1800BCD70A /* LoginViewController.xib in Resources */,
+				3652810D2A09F37B00A0F4BA /* doctors.rtf in Resources */,
 				36DD244129DE69C4000A64E2 /* Assets.xcassets in Resources */,
 				36317E0E2A04E87B00556203 /* GoogleService-Info.plist in Resources */,
+				3652810B2A09F35800A0F4BA /* account.rtf in Resources */,
 				36DD243F29DE69C2000A64E2 /* Main.storyboard in Resources */,
 				36DD247629E3F50D000A64E2 /* TopMenuColCell.xib in Resources */,
 				36EEFB8D29E64C8200C00AD1 /* CarouselColCell.xib in Resources */,
