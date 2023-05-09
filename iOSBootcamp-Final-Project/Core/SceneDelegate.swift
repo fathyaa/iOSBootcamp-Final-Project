@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         self.setupWindow(with: scene)
-        /// function untuk cek apakah session user sedang terisi
+        /// run function cek auth untuk menentukan halaman awal ketika app dibuka
         self.checkAuthentication()
     }
 
@@ -27,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     // MARK: - Check authentication
+    /// function untuk cek apakah auth user sedang terisi
     public func checkAuthentication() {
         /// jika tidak ada user yang sedang login, maka akan direct ke page login
         if Auth.auth().currentUser == nil {

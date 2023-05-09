@@ -24,7 +24,6 @@ class DokterAnakTableCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func setDokterAnakColView() {
@@ -51,11 +50,12 @@ class DokterAnakTableCell: UITableViewCell {
 
 extension DokterAnakTableCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return modelHome?[3].items.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = drAnakColCell.dequeueReusableCell(withReuseIdentifier: TreatmentCategoryColCell.identifier, for: indexPath) as? TreatmentCategoryColCell else { return UICollectionViewCell() }
+        /// data untuk kategori ini berada di index ke-3 di jsonnya (/home), jadi indexnya dibuat 3
         if let homeData = modelHome?[3] {
             cell.setData(homeItems: homeData.items[indexPath.row])
         }
@@ -71,6 +71,7 @@ extension DokterAnakTableCell: UICollectionViewDelegateFlowLayout, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        /// data doctor untuk kategori ini berada di index ke-2 di jsonnya (/doctor), jadi indexnya dibuat 2
         self.homeVCDelegate?.directToListPage(index: 2)
     }
 }

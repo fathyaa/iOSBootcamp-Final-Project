@@ -20,6 +20,7 @@ class TopMenuTableCell: UITableViewCell {
         return collectionView
     }()
     
+    /// dummy data untuk top menu
     var menuIcon = ["stethoscope", "person-pregnant", "doctor", "capsules", "book-medical", "ambulance"]
     var menuLabel = ["Konsultasi Dokter", "Toko Kesehatan", "Janji Medis", "Program Hamil", "Benefit Asuransi & Perusahaan", "Asuransi AXA Good Health"]
     
@@ -52,7 +53,7 @@ class TopMenuTableCell: UITableViewCell {
 
 extension TopMenuTableCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return menuLabel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

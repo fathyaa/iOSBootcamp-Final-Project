@@ -51,11 +51,12 @@ class DokterKandunganTableCell: UITableViewCell {
 
 extension DokterKandunganTableCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return modelHome?[1].items.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = drKandunganColView.dequeueReusableCell(withReuseIdentifier: TreatmentCategoryColCell.identifier, for: indexPath) as? TreatmentCategoryColCell else { return UICollectionViewCell() }
+        /// data untuk kategori ini berada di index ke-1 di jsonnya (/home), jadi indexnya dibuat 1
         if let homeData = modelHome?[1] {
             cell.setData(homeItems: homeData.items[indexPath.row])
         }
@@ -71,6 +72,7 @@ extension DokterKandunganTableCell: UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        /// data doctor untuk kategori ini berada di index ke-0 di jsonnya (/doctor), jadi indexnya dibuat 0
         self.homeVCDelegate?.directToListPage(index: 0)
     }
 }

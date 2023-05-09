@@ -19,6 +19,7 @@ class CarouselTableCell: UITableViewCell {
         return collectionView
     }()
     
+    /// dummy data untuk carousel
     let carouselImg = ["banner-carousel-1", "banner-carousel-2"]
     
     override func awakeFromNib() {
@@ -39,6 +40,7 @@ class CarouselTableCell: UITableViewCell {
         contentView.addSubview(carouselView)
         carouselView.addSubview(carouselColView)
         
+        /// clipstobounds agar carouselColView terbungkus carouselView
         carouselView.clipsToBounds = true
         carouselView.layer.cornerRadius = 20
         contentView.backgroundColor = .clear
