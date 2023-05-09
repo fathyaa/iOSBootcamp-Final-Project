@@ -7,13 +7,12 @@
 
 import UIKit
 
-// MARK: - protocol untuk direct ke listviewcontroller
-/// ketika collectionviewcell yang ada di dalam hometableview diklik, maka akan direct ke listviewcontroller
+/// ketika collectionviewcell yang ada di dalam hometableview diklik, maka akan direct ke listviewcontroller dengan menggunakan bantuan protocol ini
 protocol HomeViewControllerDelegate {
     func directToListPage(index: Int)
 }
 
-// MARK: - enum untuk menamakan index section
+/// enum untuk menamakan index section di hometableview
 enum HomeSection: Int {
     case topMenu
     case promotionBanner
@@ -56,7 +55,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet var homeSearchBar: UISearchBar!
     var homeViewModel: HomeViewModel?
-    /// declare model Home
+    // declare model Home
     var modelHome: [Home]?
     
     let nameLabel: UILabel = {
@@ -90,12 +89,12 @@ class HomeViewController: UIViewController {
         fetchUserInHome()
     }
     
-    // MARK: - set Navbar di home page
+    /// func untuk set Navbar di home page
     func setNavBar(){
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        /// buat stackview untuk label nama dan alamat
+        // buat stackview untuk label nama dan alamat
         let leftStackView = UIStackView(arrangedSubviews: [nameLabel, addressLabel])
         leftStackView.spacing = 1
         leftStackView.axis = .vertical
@@ -104,8 +103,7 @@ class HomeViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: notifButtonImage)
     }
     
-    // MARK: - set Home table view
-    /// Menginisiasikan delegate, datasource, dan register table cell
+    /// func untuk set Home table view
     func setHomeTableView() {
         homeTableView.delegate = self
         homeTableView.dataSource = self
@@ -119,13 +117,12 @@ class HomeViewController: UIViewController {
         homeTableView.register(UINib(nibName: "TopThreeTipsTableCell", bundle: nil), forCellReuseIdentifier: TopThreeTipsTableCell.identifier)
         homeTableView.register(TipsCategoriesTableCell.self, forCellReuseIdentifier: TipsCategoriesTableCell.identifier)
         
-        /// set section footer & header height
+        // set section footer & header height
         homeTableView.sectionFooterHeight = 0.0
         homeTableView.sectionHeaderHeight = 0.0
     }
     
-    // MARK: - bind API data from https://localhost:3003/home
-    /// mendapatkan data dari API, masukkan ke modelHome
+    /// function untuk bind data dari api, lalu dimasukkan ke modelHome
     func bindAPIData() {
         self.homeViewModel = HomeViewModel(urlString: "http://localhost:3003/home", apiService: ApiService())
         self.homeViewModel?.bindHomeData = { homeData in
@@ -141,8 +138,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    // MARK: - fetch user data from firebase
-    /// mengambil dan menampilkan data user dari firebase
+    /// function untuk mengambil dan menampilkan data user dari firebase
     func fetchUserInHome() {
         AuthService.shared.fetchUser { [weak self] user, error in
             guard let self = self else { return }
@@ -184,27 +180,24 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .drKandunganCategory:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterKandunganTableCell.identifier, for: indexPath) as? DokterKandunganTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
-            /// implement protocol
             cell.homeVCDelegate = self
-            /// pass data modelHome di HomeVC ke modelHome yg ada di DokterKandunganTableCell
+            // pass data modelHome di HomeVC ke modelHome yg ada di DokterKandunganTableCell
             cell.modelHome = modelHome
             cell.setDokterKandunganColView()
             return cell
         case .drPenyakitDalamCategory:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterPenyakitDalamTableCell.identifier, for: indexPath) as? DokterPenyakitDalamTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
-            /// implement protocol
             cell.homeVCDelegate = self
-            /// pass data modelHome di HomeVC ke modelHome yg ada di DokterPenyakitDalamTableCell
+            // pass data modelHome di HomeVC ke modelHome yg ada di DokterPenyakitDalamTableCell
             cell.modelHome = modelHome
             cell.setDokterPenyakitDalamColView()
             return cell
         case .drSpesialisAnakCategory:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterAnakTableCell.identifier, for: indexPath) as? DokterAnakTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
-            /// implement protocol
             cell.homeVCDelegate = self
-            /// pass data modelHome di HomeVC ke modelHome yg ada di DokterAnakTableCell
+            // pass data modelHome di HomeVC ke modelHome yg ada di DokterAnakTableCell
             cell.modelHome = modelHome
             cell.setDokterAnakColView()
             return cell
@@ -232,12 +225,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch HomeSection(section) {
         case .topMenu, .promotionBanner, .carouselBanner, .topThreeTips, .categoriesTips:
             return nil
-        ///set header view untuk di section berikut
+        // set header view untuk di section berikut
         case .drKandunganCategory, .drPenyakitDalamCategory, .drSpesialisAnakCategory:
-            /// buat wadah untuk header
+            /// wadah untuk header
             let headerView = UITableViewHeaderFooterView()
             
-            /// buat komponen yang akan dimasukkan ke headerview
+            /// komponen yang akan dimasukkan ke headerview
             let sectionTitleLabel = UILabel()
             sectionTitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
             sectionTitleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -248,7 +241,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             sectionSubTitleLabel.lineBreakMode = .byWordWrapping
             sectionSubTitleLabel.numberOfLines = 0
             
-            /// set text sesuai section
+            // set text sesuai section
             if HomeSection(section) == .drKandunganCategory {
                 sectionTitleLabel.text = "Konsultasi Dokter Spesialis Kandungan"
                 sectionSubTitleLabel.text = "Punya Keluhan berikut? Yuk, chat dokter kandungan mulai dari 25RB!"
@@ -260,11 +253,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 sectionSubTitleLabel.text = "Chat dokter spesialis anak untuk atasi keluhan berikut:"
             }
             
-            /// masukkan komponen ke headerview
+            // masukkan komponen ke headerview
             headerView.addSubview(sectionTitleLabel)
             headerView.addSubview(sectionSubTitleLabel)
             
-            /// set constraint untuk components di headerview
+            // set constraint untuk components di headerview
             NSLayoutConstraint.activate([
                 sectionTitleLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 15),
                 sectionTitleLabel.bottomAnchor.constraint(equalTo: sectionSubTitleLabel.bottomAnchor, constant: -25),
@@ -311,7 +304,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    /// ketika diklik gak akan ada effect highlight
+    // ketika diklik gak akan ada effect highlight
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
     }
@@ -331,17 +324,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeViewControllerDelegate {
-    /// implement protocol
-    // MARK: - Function direct to list page ketika doctor category diklik
-    /// section yg membutuhkan function ini: .drKandunganCategory, .drPenyakitDalamCategory, .drSpesialisAnakCategory
+    /// Function direct to list page ketika doctor category diklik. Section di HomeTableView yg membutuhkan function ini: .drKandunganCategory, .drPenyakitDalamCategory, .drSpesialisAnakCategory
     func directToListPage(index: Int) {
         /// definisikan storyboard karena VC-nya menggunakan storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         /// instantiasi VC yg  ber-identifier doctorListVC
         let viewController = storyboard.instantiateViewController(withIdentifier: "doctorListVC") as! DoctorListViewController
-        /// variable index untuk menentukan index di json agar datanya sesuai dengan yang mau ditampilkan
         viewController.indexSelected = index
-        /// push VC
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

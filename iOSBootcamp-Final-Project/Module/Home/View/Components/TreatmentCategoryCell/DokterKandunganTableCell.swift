@@ -24,7 +24,6 @@ class DokterKandunganTableCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func setDokterKandunganColView() {
@@ -56,7 +55,7 @@ extension DokterKandunganTableCell: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = drKandunganColView.dequeueReusableCell(withReuseIdentifier: TreatmentCategoryColCell.identifier, for: indexPath) as? TreatmentCategoryColCell else { return UICollectionViewCell() }
-        /// data untuk kategori ini berada di index ke-1 di jsonnya (/home), jadi indexnya dibuat 1
+        // data untuk kategori ini berada di index ke-1 di jsonnya (/home), jadi indexnya dibuat 1
         if let homeData = modelHome?[1] {
             cell.setData(homeItems: homeData.items[indexPath.row])
         }

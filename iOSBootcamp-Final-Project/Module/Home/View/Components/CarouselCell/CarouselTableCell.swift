@@ -40,7 +40,7 @@ class CarouselTableCell: UITableViewCell {
         contentView.addSubview(carouselView)
         carouselView.addSubview(carouselColView)
         
-        /// clipstobounds agar carouselColView terbungkus carouselView
+        // clipstobounds agar carouselColView terbungkus carouselView
         carouselView.clipsToBounds = true
         carouselView.layer.cornerRadius = 20
         contentView.backgroundColor = .clear

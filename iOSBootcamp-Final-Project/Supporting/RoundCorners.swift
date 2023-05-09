@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIView {
+    /// function untuk mengatur corner agar jadi melengkung menggunakan UIBezierPath
     func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()

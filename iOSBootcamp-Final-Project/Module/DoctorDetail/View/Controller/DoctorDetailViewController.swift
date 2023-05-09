@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// enum untuk menamakan index section di doctordetailtableview
 enum DoctorDetailSection: Int {
     case header
     case info
@@ -71,7 +72,7 @@ class DoctorDetailViewController: UIViewController {
         }
     }
     
-    /// set text di previousPriceLabel dan priceLabel
+    /// func untuk set text di previousPriceLabel dan priceLabel
     func setPrice(){
         let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: "Rp." + (doctorDetail?.previousPrice ?? ""))
         attributedString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributedString.length))
@@ -100,10 +101,10 @@ extension DoctorDetailViewController: UITableViewDataSource, UITableViewDelegate
         case .info:
             guard let cell = doctorDetailTableView.dequeueReusableCell(withIdentifier: InfoDoctorTableCell.identifier, for: indexPath) as? InfoDoctorTableCell else { return UITableViewCell() }
             
-            /// set data spesialis
+            // set data spesialis
             if indexPath.row == 0 {
                 cell.setDataSpesialis(doctorSpes: doctorDetail?.specialization ?? "")
-            /// set data location
+            // set data location
             } else if indexPath.row == 1 {
                 cell.setDataLoc(doctorLoc: doctorDetail?.location ?? "")
             }

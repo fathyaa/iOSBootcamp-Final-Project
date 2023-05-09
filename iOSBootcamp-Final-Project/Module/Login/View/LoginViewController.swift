@@ -47,41 +47,42 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /// button action
+        // button action
         loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         self.registButton.addTarget(self, action: #selector(didTapRegist), for: .touchUpInside)
     }
 
     // MARK: - Actions when loginButton tapped
+    /// function yang dijalankan ketika tombol loginButton ditekan
     @objc func didTapLogin() {
-        /// inisiasi inputan user ke model LoginUserRequest
+        // inisiasi inputan user ke model LoginUserRequest
         let loginRequest = LoginUserRequest(
             email: self.emailTextField.text ?? "",
             password: self.passwordTextField.text ?? ""
         )
         
-        /// cek validasi email yang diinputkan sudah sesuai syarat
+        // cek validasi email yang diinputkan sudah sesuai syarat
         if !Validator.isValidEmail(for: loginRequest.email) {
             AlertManager.showInvalidEmailAlert(on: self)
             return
         }
         
-        /// cek validasi password yang diinputkan sudah sesuai syarat
+        // cek validasi password yang diinputkan sudah sesuai syarat
         if !Validator.isValidPassword(for: loginRequest.password) {
             AlertManager.showInvalidPasswordAlert(on: self)
             return
         }
         
-        /// proses login ke firebase melalui function loginUser di class AuthService
+        // proses login ke firebase melalui function loginUser di class AuthService
         AuthService.shared.loginUser(with: loginRequest) { error in
             
-            /// jika error, maka akan memunculkan alert error
+            // jika error, maka akan memunculkan alert error
             if let  error = error {
                 AlertManager.showSignInErrorAlert(on: self, with: error)
                 return
             }
             
-            /// jika berhasil, maka akan menjalankan function checkAuthentication
+            // jika berhasil, maka akan menjalankan function checkAuthentication
             if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
                 sceneDelegate.checkAuthentication()
             }

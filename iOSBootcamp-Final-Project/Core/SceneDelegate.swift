@@ -14,11 +14,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         self.setupWindow(with: scene)
-        /// run function cek auth untuk menentukan halaman awal ketika app dibuka
+        // run function cek auth untuk menentukan halaman awal ketika app dibuka
         self.checkAuthentication()
     }
 
     // MARK: - Setup window
+    /// function untuk set window ketika app dijalankan
     private func setupWindow(with scene: UIScene) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
@@ -27,21 +28,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     // MARK: - Check authentication
-    /// function untuk cek apakah auth user sedang terisi
+    /// function untuk cek apakah auth user sedang terisi. Jika tidak ada user yang sedang login, maka akan direct ke page login. Jika ada user yang sedang login, maka akan direct ke ke tab bar.
     public func checkAuthentication() {
-        /// jika tidak ada user yang sedang login, maka akan direct ke page login
         if Auth.auth().currentUser == nil {
             self.goToController(with: LoginViewController())
-        /// jika ada user yang sedang login, maka akan direct ke ke tab bar
         } else {
             self.goToController(with: TabBar())
         }
     }
     
     // MARK: - Direct to Controller
+    /// function untuk pindah controller setelah cek auth.
     private func goToController(with viewController: UIViewController) {
         DispatchQueue.main.async { [weak self] in
-            /// set  animation ketika direct ke view controller
+            // set  animation ketika direct ke view controller
             UIView.animate(withDuration: 0.25) {
                 self?.window?.layer.opacity = 0
                 

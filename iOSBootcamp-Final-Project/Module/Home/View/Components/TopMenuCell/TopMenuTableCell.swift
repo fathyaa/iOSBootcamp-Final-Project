@@ -22,6 +22,7 @@ class TopMenuTableCell: UITableViewCell {
     
     /// dummy data untuk top menu
     var menuIcon = ["stethoscope", "person-pregnant", "doctor", "capsules", "book-medical", "ambulance"]
+    /// dummy data untuk top menu
     var menuLabel = ["Konsultasi Dokter", "Toko Kesehatan", "Janji Medis", "Program Hamil", "Benefit Asuransi & Perusahaan", "Asuransi AXA Good Health"]
     
     override func awakeFromNib() {
