@@ -14,10 +14,12 @@ class AuthService {
     
     // MARK: - Create user to Firebase
     public func registerUser(with userRequest: RegisterUserRequest, completion: @escaping (Bool, Error?) -> Void){
+        /// definisiin name, email, password berisi inputan yg didapet dari parameter userRequest
         let name = userRequest.username ?? ""
         let email = userRequest.email ?? ""
         let password = userRequest.password ?? ""
         
+        /// proses create user
         Auth.auth().createUser(withEmail: email, password: password) {
             result, error in
             
@@ -32,6 +34,7 @@ class AuthService {
             }
             
             let db = Firestore.firestore()
+            /// simpan data di collection 'users'
             db.collection("users")
                 .document(resultUser.uid)
                 .setData([
@@ -49,8 +52,10 @@ class AuthService {
     
     // MARK: - Log in authentication
     public func loginUser(with userRequest: LoginUserRequest, completion: @escaping (Error?) -> Void ) {
+        /// proses login
         Auth.auth().signIn(withEmail: userRequest.email, password: userRequest.password) {
             result, error in
+            /// handle error
             if let error = error {
                 completion(error)
                 return
@@ -74,16 +79,21 @@ class AuthService {
     public func fetchUser(completion: @escaping (User?, Error?) -> Void) {
         guard let userUID = Auth.auth().currentUser?.uid else { return }
         
+        /// definisiin firestore as db
         let db = Firestore.firestore()
         
+        /// dapetin reference collection 'user' di db
         db.collection("users")
+            /// dapetin reference document 'userUID'
             .document(userUID)
+            /// fetch data
             .getDocument { snapshot, error in
+                /// handle error
                 if let error = error {
                     completion(nil, error)
                     return
                 }
-                
+                /// masukin data dari firestore ke model User, lalu pass ke class yang manggil function ini lewat completion
                 if let snapshot = snapshot,
                    let snapshotData = snapshot.data(),
                    let name = snapshotData["name"] as? String,

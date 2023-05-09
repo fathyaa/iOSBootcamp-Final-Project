@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet var homeSearchBar: UISearchBar!
     var homeViewModel: HomeViewModel?
-    /// definisikan model Home
+    /// declare model Home
     var modelHome: [Home]?
     
     let nameLabel: UILabel = {
@@ -85,7 +85,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar()
-        setTableView()
+        setHomeTableView()
         bindAPIData()
         fetchUserInHome()
     }
@@ -106,7 +106,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - set Home table view
     /// Menginisiasikan delegate, datasource, dan register table cell
-    func setTableView() {
+    func setHomeTableView() {
         homeTableView.delegate = self
         homeTableView.dataSource = self
         homeTableView.register(TopMenuTableCell.self, forCellReuseIdentifier: TopMenuTableCell.identifier)
@@ -280,7 +280,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .topTips:
             let tipsHeaderView = UITableViewHeaderFooterView()
             
-            /// buat view yang melengkung di section toptips
+            /// buat view yang rounded di header section toptips
             let bgView = UIView()
             bgView.clipsToBounds = true
             bgView.layer.cornerRadius = 20
@@ -311,7 +311,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    /// ketika diklik tidak akan ada effect highlight
+    /// ketika diklik gak akan ada effect highlight
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
     }

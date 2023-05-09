@@ -13,7 +13,7 @@ class Validator {
     static func isValidEmail(for email: String) -> Bool {
         /// inisiasi email yg diinputkan untuk dicek
         let email = email.trimmingCharacters(in: .whitespacesAndNewlines)
-        /// definisikan syarat untuk inputan email
+        /// definisikan regular expression untuk validasi inputan email
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.{1}[A-Za-z]{2,64}"
         /// inisiasi var untuk cek email apakah sudah sesuai dengan regEx
         let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)

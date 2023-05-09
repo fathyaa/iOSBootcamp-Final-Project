@@ -18,6 +18,7 @@ class DoctorListViewModel: DoctorListViewProtocol {
     var urlString: String
     var doctorsModel: Doctors?
     
+    /// untuk mereferensi ke closure tersebut. digunakan buat callback di VC
     var bindDoctorsData: (([Doctors]?) -> Void)?
     
     init(urlString: String, apiService: ApiServiceProtocol){
@@ -26,14 +27,16 @@ class DoctorListViewModel: DoctorListViewProtocol {
         if let url = URL(string: urlString){
             self.apiService?.get(url: url)
         }
+        /// panggil function untuk ambil data dari api
         fetchDoctorsData()
     }
     
     func fetchDoctorsData() {
         self.apiService?.callApi(model: [Doctors].self, completion: { response in
             switch response {
-            case .success(let success):
-                self.bindDoctorsData?(success)
+            case .success(let doctorsData):
+                /// data yang difetch diikat di bindDoctorData
+                self.bindDoctorsData?(doctorsData)
             case .failure(let error):
                 print(error.localizedDescription)
                 self.bindDoctorsData?(nil)

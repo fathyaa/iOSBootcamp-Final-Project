@@ -13,11 +13,13 @@ protocol AccountViewProtocol {
     func fetchAccountData()
 }
 
+/// implement protocol
 class AccountViewModel: AccountViewProtocol {
     private var apiService: ApiServiceProtocol?
     var urlString: String
     var doctorsModel: Account?
     
+    /// untuk mereferensi ke closure tersebut. digunakan buat callback di VC
     var bindAccountData: (([Account]?) -> Void)?
     
     init(urlString: String, apiService: ApiServiceProtocol){
@@ -32,8 +34,9 @@ class AccountViewModel: AccountViewProtocol {
     func fetchAccountData() {
         self.apiService?.callApi(model: [Account].self, completion: { response in
             switch response {
-            case .success(let success):
-                self.bindAccountData?(success)
+            case .success(let accountData):
+                /// data yang difetch diikat di bindAccountData
+                self.bindAccountData?(accountData)
             case .failure(let error):
                 print(error.localizedDescription)
                 self.bindAccountData?(nil)

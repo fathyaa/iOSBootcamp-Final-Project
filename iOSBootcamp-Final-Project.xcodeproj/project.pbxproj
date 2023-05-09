@@ -508,8 +508,8 @@
 			isa = PBXGroup;
 			children = (
 				D23C7A3B29F56FFC00225256 /* View */,
-				36B271DF2A025A8900BCD70A /* Model */,
 				36B271E22A025F6700BCD70A /* ViewModel */,
+				36B271DF2A025A8900BCD70A /* Model */,
 			);
 			path = DoctorList;
 			sourceTree = "<group>";

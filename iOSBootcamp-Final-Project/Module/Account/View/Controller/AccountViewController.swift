@@ -46,15 +46,13 @@ class AccountViewController: UIViewController {
         accountTableView.register(UINib(nibName: "ProfileTableCell", bundle: nil), forCellReuseIdentifier: ProfileTableCell.identifier)
         accountTableView.register(UINib(nibName: "MenuTableCell", bundle: nil), forCellReuseIdentifier: MenuTableCell.identifier)
         
-        if #available(iOS 15.0, *) {
-            accountTableView.sectionHeaderTopPadding = 0
-        }
-        
         accountTableView.sectionFooterHeight = 0.0
-        accountTableView.sectionHeaderHeight = 0.0
+        /// atur padding atas
         self.accountTableView.contentInset = UIEdgeInsets(top: -35, left: 0, bottom: 0, right: 0);
     }
     
+    // MARK: - bind API data from https://localhost:3003/account
+    /// mendapatkan data dari API, masukkan ke modelAccount
     func bindAPIData() {
         self.accountViewModel = AccountViewModel(urlString: "http://localhost:3003/account", apiService: ApiService())
         self.accountViewModel?.bindAccountData = { accountData in
@@ -70,6 +68,7 @@ class AccountViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions when logoutButton tapped
     @objc private func didTapLogout() {
         AuthService.shared.logoutUser { [weak self] error in
             guard let self = self else { return }
@@ -118,6 +117,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         return 3
     }
     
+    /// atur header dan footer agar view di ujung sectionnya rounded
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch AccountSection(section) {
         case .profile:

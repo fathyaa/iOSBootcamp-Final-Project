@@ -73,6 +73,7 @@ extension DokterPenyakitDalamTableCell: UICollectionViewDelegateFlowLayout, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         /// data doctor untuk kategori ini berada di index ke-1 di jsonnya (/doctor), jadi indexnya dibuat 1
-        self.homeVCDelegate?.directToListPage(index: 1)
+        let index = 1
+        self.homeVCDelegate?.directToListPage(index: index)
     }
 }

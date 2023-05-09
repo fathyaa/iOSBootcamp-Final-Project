@@ -12,6 +12,7 @@ class DoctorListViewController: UIViewController {
     @IBOutlet weak var doctorListColView: UICollectionView!
     var doctorListViewModel: DoctorListViewModel?
     var modelDoctors: [Doctors]?
+    /// var indexSelected didapetin dari parameter index di func directToListPage
     var indexSelected: Int?
     
     override func viewDidLoad() {
@@ -26,6 +27,8 @@ class DoctorListViewController: UIViewController {
         doctorListColView.register(UINib(nibName: "DoctorCardColViewCell", bundle: nil), forCellWithReuseIdentifier: DoctorCardColViewCell.identifier)
     }
     
+    // MARK: - bind API data from https://localhost:3003/doctors
+    /// mendapatkan data dari API, masukkan ke modelDoctors
     func bindAPIData() {
         self.doctorListViewModel = DoctorListViewModel(urlString: "http://localhost:3003/doctors", apiService: ApiService())
         self.doctorListViewModel?.bindDoctorsData = { doctorsData in
@@ -50,6 +53,7 @@ extension DoctorListViewController: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell =
                 doctorListColView.dequeueReusableCell(withReuseIdentifier: DoctorCardColViewCell.identifier, for: indexPath) as? DoctorCardColViewCell else { return UICollectionViewCell() }
+        /// ambil data modelDoctor di index ke-indexSelected
         if let data = modelDoctors?[indexSelected ?? 0] {
             cell.setData(doctors: data, index: indexPath.row)
         }
@@ -68,6 +72,7 @@ extension DoctorListViewController: UICollectionViewDataSource, UICollectionView
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "doctorDetailVC") as! DoctorDetailViewController
         
+        /// pass data dokter yang diklik ke detailDoctorVC
         if let doctorDetail = modelDoctors?[indexSelected ?? 0] {
             viewController.doctorDetail = doctorDetail.items[indexPath.row]
         }
