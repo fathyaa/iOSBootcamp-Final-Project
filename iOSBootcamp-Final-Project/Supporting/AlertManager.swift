@@ -9,6 +9,7 @@ import UIKit
 
 class AlertManager {
     
+    // membuat UI untuk memunculkan alerts
     private static func showBasicAlert(on vc: UIViewController, title: String, message: String?) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

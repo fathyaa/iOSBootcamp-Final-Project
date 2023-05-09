@@ -62,6 +62,22 @@ class HomeViewController: UIViewController {
         return lbl
     }()
     
+    let addressLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Jl. Your address will appear here"
+        lbl.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        return lbl
+    }()
+    
+    let notifButtonImage: UIImageView = {
+        let btnImage = UIImageView()
+        btnImage.image = UIImage(systemName: "bell.fill")
+        btnImage.tintColor = UIColor(named: "theme-color")
+        btnImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        btnImage.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        return btnImage
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar()
@@ -74,22 +90,6 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
-        let addressLabel: UILabel = {
-            let lbl = UILabel()
-            lbl.text = "Jl. Your address will appear here"
-            lbl.font = UIFont.systemFont(ofSize: 13, weight: .light)
-            return lbl
-        }()
-        
-        let notifButtonImage: UIImageView = {
-            let btnImage = UIImageView()
-            btnImage.image = UIImage(systemName: "bell.fill")
-            btnImage.tintColor = UIColor(named: "theme-color")
-            btnImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
-            btnImage.heightAnchor.constraint(equalToConstant: 30).isActive = true
-            return btnImage
-        }()
         
         let leftStackView = UIStackView(arrangedSubviews: [nameLabel, addressLabel])
         leftStackView.spacing = 1
@@ -132,6 +132,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    /// mengambil dan menampilkan data user dari firebase
     func fetchUserInHome() {
         AuthService.shared.fetchUser { [weak self] user, error in
             guard let self = self else { return }

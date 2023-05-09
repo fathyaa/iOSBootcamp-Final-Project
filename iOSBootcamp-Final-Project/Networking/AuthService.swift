@@ -12,8 +12,7 @@ import FirebaseFirestore
 class AuthService {
     public static let shared = AuthService()
     
-//    private init() {}
-    
+    // MARK: - Create user to Firebase
     public func registerUser(with userRequest: RegisterUserRequest, completion: @escaping (Bool, Error?) -> Void){
         let name = userRequest.username ?? ""
         let email = userRequest.email ?? ""
@@ -48,6 +47,7 @@ class AuthService {
         }
     }
     
+    // MARK: - Log in authentication
     public func loginUser(with userRequest: LoginUserRequest, completion: @escaping (Error?) -> Void ) {
         Auth.auth().signIn(withEmail: userRequest.email, password: userRequest.password) {
             result, error in
@@ -60,6 +60,7 @@ class AuthService {
         }
     }
     
+    // MARK: - Log out from existing user
     public func logoutUser(completion: @escaping (Error?) -> Void) {
         do {
             try Auth.auth().signOut()
@@ -69,6 +70,7 @@ class AuthService {
         }
     }
     
+    // MARK: - Fetch user data from Firestore
     public func fetchUser(completion: @escaping (User?, Error?) -> Void) {
         guard let userUID = Auth.auth().currentUser?.uid else { return }
         

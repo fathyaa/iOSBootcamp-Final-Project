@@ -27,6 +27,7 @@ class ProfileTableCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    /// mengambil dan menampilkan data user dari firebase
     func fetchUserInProfile(){
         AuthService.shared.fetchUser { [weak self] user, error in
             guard let self = self else { return }

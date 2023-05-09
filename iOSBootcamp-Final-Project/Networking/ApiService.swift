@@ -7,11 +7,13 @@
 
 import Foundation
 
+/// buat protocol untuk abstraction
 protocol ApiServiceProtocol {
     mutating func get(url: URL)
     func callApi<T: Codable>(model: T.Type, completion: @escaping (Result<T, Error>) -> Void)
 }
 
+/// implementasi protocol
 struct ApiService: ApiServiceProtocol {
     private var url = URL(string: "")
     mutating func get(url: URL) {

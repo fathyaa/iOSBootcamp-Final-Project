@@ -47,42 +47,47 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.registButton.addTarget(self, action: #selector(didTapRegist), for: .touchUpInside)
         navigationController?.isNavigationBarHidden = false
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        /// jika registButton diklik, maka akan menjalankan function didTapRegist
+        self.registButton.addTarget(self, action: #selector(didTapRegist), for: .touchUpInside)
     }
     
+    // MARK: - Actions when registButton tapped
     @objc func didTapRegist() {
+        /// inisiasi inputan user ke model RegisterUserRequest
         let registerUserRequest = RegisterUserRequest(
             username: self.usernameTextField.text ?? "",
             email: self.emailTextField.text ?? "",
             password: self.passwordTextField.text ?? "")
         
+        /// cek validasi username yang diinputkan sudah sesuai syarat
         if !Validator.isValidUsername(for: registerUserRequest.username ?? "") {
             AlertManager.showInvalidUsernameAlert(on: self)
             return
         }
         
+        /// cek validasi email, apakah yang diinputkan sudah sesuai syarat
         if !Validator.isValidEmail(for: registerUserRequest.email ?? "") {
             AlertManager.showInvalidEmailAlert(on: self)
             return
         }
         
+        /// cek validasi password, apakah yang diinputkan sudah sesuai syarat
         if !Validator.isValidPassword(for: registerUserRequest.password ?? "") {
             AlertManager.showInvalidPasswordAlert(on: self)
             return
         }
         
+        /// proses registrasi ke firebase melalui function registerUser di class AuthService
         AuthService.shared.registerUser(with: registerUserRequest) { wasRegistered, error in
             
+            /// jika error, maka akan memunculkan alert error
             if let error = error {
                 AlertManager.showRegistrationErrorAlert(on: self, with: error)
                 return
             }
             
+            /// jika berhasil, maka akan menjalankan checkAuthentication
             if wasRegistered {
                 if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
                     sceneDelegate.checkAuthentication()

@@ -50,10 +50,6 @@ class LoginViewController: UIViewController {
         self.loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         self.registButton.addTarget(self, action: #selector(didTapRegist), for: .touchUpInside)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
 
     @objc func didTapLogin() {
         print("clicked didTapLogin")
