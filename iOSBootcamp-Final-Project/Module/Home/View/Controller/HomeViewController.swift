@@ -9,7 +9,7 @@ import UIKit
 
 /// ketika collectionviewcell yang ada di dalam hometableview diklik, maka akan direct ke listviewcontroller dengan menggunakan bantuan protocol ini
 protocol HomeViewControllerDelegate {
-    func directToListPage(index: Int)
+    func directToListPage(category: Category)
 }
 
 /// enum untuk menamakan index section di hometableview
@@ -51,10 +51,9 @@ enum HomeSection: Int {
 }
 
 enum Category: String {
-    case topMenu
-    case drKandunganCategory
-    case drPenyakitDalam
-    case drSpesialisAnak
+    case drKandunganCategory = "drKandunganCategory"
+    case drPenyakitDalamCategory = "drPenyakitDalamCategory"
+    case drAnakCategory = "drAnakCategory"
 }
 
 class HomeViewController: UIViewController {
@@ -169,6 +168,18 @@ class HomeViewController: UIViewController {
                 self.nameLabel.text = user.name
             }
         }
+    }
+}
+
+extension HomeViewController: HomeViewControllerDelegate {
+    /// Function direct to list page ketika doctor category diklik. Section di HomeTableView yg membutuhkan function ini: .drKandunganCategory, .drPenyakitDalamCategory, .drSpesialisAnakCategory
+    func directToListPage(category: Category) {
+        /// definisikan storyboard karena VC-nya menggunakan storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        /// instantiasi VC yg  ber-identifier doctorListVC
+        let viewController = storyboard.instantiateViewController(withIdentifier: "doctorListVC") as! DoctorListViewController
+        viewController.categorySelected = category
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -335,17 +346,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .promotionBanner, .carouselBanner, .topThreeTips, .categoriesTips:
             return 0
         }
-    }
-}
-
-extension HomeViewController: HomeViewControllerDelegate {
-    /// Function direct to list page ketika doctor category diklik. Section di HomeTableView yg membutuhkan function ini: .drKandunganCategory, .drPenyakitDalamCategory, .drSpesialisAnakCategory
-    func directToListPage(index: Int) {
-        /// definisikan storyboard karena VC-nya menggunakan storyboard
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        /// instantiasi VC yg  ber-identifier doctorListVC
-        let viewController = storyboard.instantiateViewController(withIdentifier: "doctorListVC") as! DoctorListViewController
-        viewController.indexSelected = index
-        navigationController?.pushViewController(viewController, animated: true)
     }
 }

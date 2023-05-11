@@ -13,7 +13,8 @@ class DoctorListViewController: UIViewController {
     var doctorListViewModel: DoctorListViewModel?
     var modelDoctors: [Doctors]?
     /// variable untuk menentukan index di json agar datanya sesuai dengan yang mau ditampilkan. Var indexSelected di-pass oleh parameter index di func directToListPage
-    var indexSelected: Int?
+    var categorySelected: Category?
+    var doctorItems = [DoctorsByCategory]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,12 @@ class DoctorListViewController: UIViewController {
         self.doctorListViewModel = DoctorListViewModel(urlString: "http://localhost:3003/doctors", apiService: ApiService())
         self.doctorListViewModel?.bindDoctorsData = { doctorsData in
             if let modelData = doctorsData {
-                self.modelDoctors = modelData
+                for data in modelData[0..<modelData.count] {
+                    if data.category == self.categorySelected?.rawValue {
+                        self.doctorItems.append(contentsOf: data.items)
+                    }
+                }
+//                self.modelDoctors = modelData
             } else {
                 self.doctorListColView.backgroundColor = .red
             }
@@ -47,16 +53,14 @@ class DoctorListViewController: UIViewController {
 
 extension DoctorListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return modelDoctors?[indexSelected ?? 0].items.count ?? 0
+        return doctorItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell =
                 doctorListColView.dequeueReusableCell(withReuseIdentifier: DoctorCardColViewCell.identifier, for: indexPath) as? DoctorCardColViewCell else { return UICollectionViewCell() }
         // ambil data modelDoctor di index ke-indexSelected
-        if let data = modelDoctors?[indexSelected ?? 0] {
-            cell.setData(doctors: data, index: indexPath.row)
-        }
+        cell.setData(doctors: doctorItems[indexPath.row])
         return cell
     }
     
@@ -73,10 +77,7 @@ extension DoctorListViewController: UICollectionViewDataSource, UICollectionView
         let viewController = storyboard.instantiateViewController(withIdentifier: "doctorDetailVC") as! DoctorDetailViewController
         
         // pass data dokter yang diklik ke detailDoctorVC
-        if let doctorDetail = modelDoctors?[indexSelected ?? 0] {
-            viewController.doctorDetail = doctorDetail.items[indexPath.row]
-        }
-        
+        viewController.doctorDetail = doctorItems[indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -27,12 +27,12 @@ class DoctorCardColViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func setData(doctors: Doctors?, index: Int){
-        doctorNameLabel.text = "dr. " + ((doctors?.items[index].name ?? "").components(separatedBy: " ").first ?? "")
-        doctorDescLabel.text = (doctors?.items[index].specialization ?? "") + " - \(doctors?.items[index].experienceYear ?? 0) tahun"
-        priceLabel.text = doctors?.items[index].price
-        doctorImage.sd_setImage(with: URL(string: doctors?.items[index].doctorImg ?? ""))
-        ratingLabel.text = doctors?.items[index].rating
+    func setData(doctors: DoctorsByCategory?){
+        doctorNameLabel.text = "dr. " + ((doctors?.name ?? "").components(separatedBy: " ").first ?? "")
+        doctorDescLabel.text = (doctors?.specialization ?? "") + " - \(doctors?.experienceYear ?? 0) tahun"
+        priceLabel.text = doctors?.price
+        doctorImage.sd_setImage(with: URL(string: doctors?.doctorImg ?? ""))
+        ratingLabel.text = doctors?.rating
     }
 
 }

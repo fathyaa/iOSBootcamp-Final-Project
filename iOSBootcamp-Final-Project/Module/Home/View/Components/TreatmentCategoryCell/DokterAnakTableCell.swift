@@ -71,8 +71,7 @@ extension DokterAnakTableCell: UICollectionViewDelegateFlowLayout, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        /// data doctor untuk kategori ini berada di index ke-2 di jsonnya (/doctor), jadi indexnya dibuat 2
-        let index = 2
-        self.homeVCDelegate?.directToListPage(index: index)
+        let category = Category.drAnakCategory
+        self.homeVCDelegate?.directToListPage(category: category)
     }
 }
