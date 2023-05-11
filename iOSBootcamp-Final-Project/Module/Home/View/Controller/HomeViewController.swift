@@ -50,6 +50,13 @@ enum HomeSection: Int {
     }
 }
 
+enum Category: String {
+    case topMenu
+    case drKandunganCategory
+    case drPenyakitDalam
+    case drSpesialisAnak
+}
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var homeTableView: UITableView!
@@ -57,6 +64,9 @@ class HomeViewController: UIViewController {
     var homeViewModel: HomeViewModel?
     // declare model Home
     var modelHome: [Home]?
+    var drKandunganItems = [Items]()
+    var drPenyakitDalamItems = [Items]()
+    var drAnakItems = [Items]()
     
     let nameLabel: UILabel = {
         let lbl = UILabel()
@@ -127,7 +137,15 @@ class HomeViewController: UIViewController {
         self.homeViewModel = HomeViewModel(urlString: "http://localhost:3003/home", apiService: ApiService())
         self.homeViewModel?.bindHomeData = { homeData in
             if let modelData = homeData {
-                self.modelHome = modelData
+                for data in modelData[0..<modelData.count] {
+                    if data.pageSection == "drKandunganCategory" {
+                        self.drKandunganItems.append(contentsOf: data.items)
+                    } else if data.pageSection == "drPenyakitDalamCategory" {
+                        self.drPenyakitDalamItems.append(contentsOf: data.items)
+                    } else if data.pageSection == ("drAnakCategory") {
+                        self.drAnakItems.append(contentsOf: data.items)
+                    }
+                }
             } else {
                 self.homeTableView.backgroundColor = .red
             }
@@ -138,7 +156,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    /// function untuk mengambil dan menampilkan data user dari firebase
+    /// function untuk mengambil data user dari firebase dan menampilkan datanya ke nameLabel
     func fetchUserInHome() {
         AuthService.shared.fetchUser { [weak self] user, error in
             guard let self = self else { return }
@@ -181,24 +199,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterKandunganTableCell.identifier, for: indexPath) as? DokterKandunganTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
             cell.homeVCDelegate = self
-            // pass data modelHome di HomeVC ke modelHome yg ada di DokterKandunganTableCell
-            cell.modelHome = modelHome
+            cell.drKandunganItems = drKandunganItems
             cell.setDokterKandunganColView()
             return cell
         case .drPenyakitDalamCategory:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterPenyakitDalamTableCell.identifier, for: indexPath) as? DokterPenyakitDalamTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
             cell.homeVCDelegate = self
-            // pass data modelHome di HomeVC ke modelHome yg ada di DokterPenyakitDalamTableCell
-            cell.modelHome = modelHome
+            cell.drPenyakitDalamItems = drPenyakitDalamItems
             cell.setDokterPenyakitDalamColView()
             return cell
         case .drSpesialisAnakCategory:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: DokterAnakTableCell.identifier, for: indexPath) as? DokterAnakTableCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
             cell.homeVCDelegate = self
-            // pass data modelHome di HomeVC ke modelHome yg ada di DokterAnakTableCell
-            cell.modelHome = modelHome
+            cell.drAnakItems = drAnakItems
             cell.setDokterAnakColView()
             return cell
         case .topTips:

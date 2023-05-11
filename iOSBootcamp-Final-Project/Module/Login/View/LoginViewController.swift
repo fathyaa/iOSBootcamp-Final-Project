@@ -37,22 +37,21 @@ class LoginViewController: UIViewController {
             passwordTextField.isSecureTextEntry = true
         }
     }
-    @IBOutlet weak var loginButton: UIButton!{
+    @IBOutlet weak private var loginButton: UIButton!{
         didSet{
             loginButton.layer.cornerRadius = 10
             loginButton.tintColor = UIColor(named: "theme-color")
         }
     }
-    @IBOutlet weak var registButton: UIButton!
+    @IBOutlet weak private var registButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // button action
         loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
-        self.registButton.addTarget(self, action: #selector(didTapRegist), for: .touchUpInside)
+        registButton.addTarget(self, action: #selector(didTapRegist), for: .touchUpInside)
     }
 
-    // MARK: - Actions when loginButton tapped
     /// function yang dijalankan ketika tombol loginButton ditekan
     @objc func didTapLogin() {
         // inisiasi inputan user ke model LoginUserRequest

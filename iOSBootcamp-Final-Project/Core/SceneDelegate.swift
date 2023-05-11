@@ -40,7 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // MARK: - Direct to Controller
     /// function untuk pindah controller setelah cek auth.
     private func goToController(with viewController: UIViewController) {
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.main.async { [ weak self] in
             // set  animation ketika direct ke view controller
             UIView.animate(withDuration: 0.25) {
                 self?.window?.layer.opacity = 0

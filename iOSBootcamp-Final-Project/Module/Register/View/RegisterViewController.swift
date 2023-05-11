@@ -52,7 +52,6 @@ class RegisterViewController: UIViewController {
         self.registButton.addTarget(self, action: #selector(didTapRegist), for: .touchUpInside)
     }
     
-    // MARK: - Actions when registButton tapped
     /// function yang dijalankan ketika tombol loginButton ditekan
     @objc func didTapRegist() {
         /// inisiasi inputan user ke model RegisterUserRequest

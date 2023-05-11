@@ -32,11 +32,13 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var accountTableView: UITableView!
     var modelAccount: [Account]?
     var accountViewModel: AccountViewModel?
+    var modelUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setAccountTableView()
         bindAPIData()
+        self.fetchUserInProfile()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(didTapLogout))
     }
     
@@ -82,6 +84,24 @@ class AccountViewController: UIViewController {
             }
         }
     }
+    
+    /// func untuk mengambil dan menampilkan data user dari firebase
+    func fetchUserInProfile(){
+        AuthService.shared.fetchUser { [weak self] user, error in
+            guard let `self` = self else { return }
+            if error != nil {
+                return
+            }
+            
+            if let userData = user {
+                self.modelUser = userData
+                DispatchQueue.main.async {
+                    self.accountTableView.reloadData()
+                }
+            }
+            
+        }
+    }
 }
 
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
@@ -100,7 +120,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         switch AccountSection(indexPath.section){
         case .profile:
             guard let cell = accountTableView.dequeueReusableCell(withIdentifier: ProfileTableCell.identifier, for: indexPath) as? ProfileTableCell else { return UITableViewCell() }
-            cell.fetchUserInProfile()
+            cell.setData(user: modelUser)
             cell.backgroundColor = .clear
             return cell
         case .menuSettings, .menuHelps:

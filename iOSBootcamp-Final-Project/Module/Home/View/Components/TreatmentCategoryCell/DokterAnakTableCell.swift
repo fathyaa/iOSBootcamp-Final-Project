@@ -11,7 +11,7 @@ class DokterAnakTableCell: UITableViewCell {
 
     static let identifier = "DokterAnakTableCell"
     var homeVCDelegate: HomeViewControllerDelegate?
-    var modelHome: [Home]?
+    var drAnakItems : [Items]?
     var drAnakColCell: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -50,14 +50,14 @@ class DokterAnakTableCell: UITableViewCell {
 
 extension DokterAnakTableCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return modelHome?[3].items.count ?? 0
+        return drAnakItems?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = drAnakColCell.dequeueReusableCell(withReuseIdentifier: TreatmentCategoryColCell.identifier, for: indexPath) as? TreatmentCategoryColCell else { return UICollectionViewCell() }
         /// data untuk kategori ini berada di index ke-3 di jsonnya (/home), jadi indexnya dibuat 3
-        if let homeData = modelHome?[3] {
-            cell.setData(homeItems: homeData.items[indexPath.row])
+        if let items = drAnakItems {
+            cell.setData(homeItems: items[indexPath.row])
         }
         return cell
     }

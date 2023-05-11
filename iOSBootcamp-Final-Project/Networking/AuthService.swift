@@ -10,6 +10,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class AuthService {
+    // ini namanya singleton
     public static let shared = AuthService()
     
     // MARK: - Create user to Firebase
