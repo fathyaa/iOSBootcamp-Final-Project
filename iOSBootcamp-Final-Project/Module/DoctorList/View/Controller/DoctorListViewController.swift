@@ -32,20 +32,20 @@ class DoctorListViewController: UIViewController {
     /// func untuk bind data dari API, lalu dimasukkan ke modelDoctors
     func bindAPIData() {
         self.doctorListViewModel = DoctorListViewModel(urlString: "http://localhost:3003/doctors", apiService: ApiService())
-        self.doctorListViewModel?.bindDoctorsData = { doctorsData in
+        self.doctorListViewModel?.bindDoctorsData = { [weak self] doctorsData in
             if let modelData = doctorsData {
                 for data in modelData[0..<modelData.count] {
-                    if data.category == self.categorySelected?.rawValue {
-                        self.doctorItems.append(contentsOf: data.items)
+                    if data.category == self?.categorySelected?.rawValue {
+                        self?.doctorItems.append(contentsOf: data.items)
                     }
                 }
 //                self.modelDoctors = modelData
             } else {
-                self.doctorListColView.backgroundColor = .red
+                self?.doctorListColView.backgroundColor = .red
             }
             print("reload data")
             DispatchQueue.main.async {
-                self.doctorListColView.reloadData()
+                self?.doctorListColView.reloadData()
             }
         }
     }

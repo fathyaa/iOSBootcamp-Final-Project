@@ -57,15 +57,15 @@ class AccountViewController: UIViewController {
     /// func untuk bind data dari API, lalu dimasukkan ke modelAccount
     func bindAPIData() {
         self.accountViewModel = AccountViewModel(urlString: "http://localhost:3003/account", apiService: ApiService())
-        self.accountViewModel?.bindAccountData = { accountData in
+        self.accountViewModel?.bindAccountData = { [weak self] accountData in
             if let modelData = accountData {
-                self.modelAccount = modelData
+                self?.modelAccount = modelData
             } else {
-                self.accountTableView.backgroundColor = .red
+                self?.accountTableView.backgroundColor = .red
             }
             print("reload data")
             DispatchQueue.main.async {
-                self.accountTableView.reloadData()
+                self?.accountTableView.reloadData()
             }
         }
     }

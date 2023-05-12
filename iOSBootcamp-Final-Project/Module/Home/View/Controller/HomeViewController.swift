@@ -134,23 +134,23 @@ class HomeViewController: UIViewController {
     /// function untuk bind data dari api, lalu dimasukkan ke modelHome
     func bindAPIData() {
         self.homeViewModel = HomeViewModel(urlString: "http://localhost:3003/home", apiService: ApiService())
-        self.homeViewModel?.bindHomeData = { homeData in
+        self.homeViewModel?.bindHomeData = { [weak self] homeData in
             if let modelData = homeData {
                 for data in modelData[0..<modelData.count] {
                     if data.pageSection == "drKandunganCategory" {
-                        self.drKandunganItems.append(contentsOf: data.items)
+                        self?.drKandunganItems.append(contentsOf: data.items)
                     } else if data.pageSection == "drPenyakitDalamCategory" {
-                        self.drPenyakitDalamItems.append(contentsOf: data.items)
+                        self?.drPenyakitDalamItems.append(contentsOf: data.items)
                     } else if data.pageSection == ("drAnakCategory") {
-                        self.drAnakItems.append(contentsOf: data.items)
+                        self?.drAnakItems.append(contentsOf: data.items)
                     }
                 }
             } else {
-                self.homeTableView.backgroundColor = .red
+                self?.homeTableView.backgroundColor = .red
             }
             print("reload data")
             DispatchQueue.main.async {
-                self.homeTableView.reloadData()
+                self?.homeTableView.reloadData()
             }
         }
     }
